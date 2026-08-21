@@ -1,0 +1,19 @@
+OFFLINE RL CHECKPOINT VERIFICATION
+============================================================
+experiment_id: EXP-IQL-IQL-S0-20260821T145206Z
+algorithm: iql
+task: mujoco/hopper/medium-v0
+seed: 0
+training_steps: 100
+device: cpu
+dataset_episodes: 1327
+checkpoint_path: checkpoints/smoke_test_fixed_v2/iql_mujoco_hopper_medium-v0_seed0.d3
+checkpoint_size_bytes: 1688723
+in_memory_return: 8.72986069861266
+reloaded_return: 8.72986069861266
+absolute_difference: 0.0
+tolerance: 50.0
+verification: CONSISTENT
+git_commit: e184d5e9b2dce90f2ec4542fc23261f8867a98f6
+git_status: DIRTY
+timestamp_utc: 2026-08-21T14:52:34.410171+00:00

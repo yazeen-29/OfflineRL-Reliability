@@ -43,18 +43,13 @@ def build_cql(
     ).create(device=device)
 
 
-def load_policy(policy, dataset, checkpoint_path):
+def load_policy(checkpoint_path, device="cpu"):
     """
-    Build the policy's internal structures/scalers first,
-    then load the trained checkpoint.
+    Load a complete d3rlpy .d3 checkpoint.
+
+    The checkpoint must have been created with policy.save().
     """
-    policy.fit(
-        dataset,
-        n_steps=1,
-        n_steps_per_epoch=1,
-        show_progress=False,
+    return d3rlpy.load_learnable(
+        checkpoint_path,
+        device=device,
     )
-
-    policy.load_model(checkpoint_path)
-
-    return policy
