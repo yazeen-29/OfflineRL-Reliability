@@ -72,3 +72,13 @@ Status: PENDING
 
 ## M12 — Final Results
 Status: PENDING
+## ✅ M4 — IQL 100k checkpoint independently verified on Arch
+
+The exact Kaggle-trained checkpoint was downloaded and loaded on the
+local rlxai2 environment.
+
+Kaggle return: 5.541286887524365
+Arch return:   5.541287391475207
+Difference:    5.039508428339445e-07
+
+Status: CHECKPOINT REPRODUCED LOCALLY
