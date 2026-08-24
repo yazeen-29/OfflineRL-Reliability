@@ -1,0 +1,21 @@
+{
+  "source_shift_results": "results/shifts/iql_100k_gaussian_observation_noise.json",
+  "source_analysis": "results/analysis/iql_100k_gaussian_shift_analysis_v3.json",
+  "query_count": 1000,
+  "noise_levels": [
+    0.0,
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "figures": [
+    "figure1_noise_vs_ood_distance",
+    "figure2_noise_vs_policy_change",
+    "figure3_noise_vs_explanation_disagreement",
+    "figure4_ood_vs_explanation_disagreement",
+    "figure5_per_query_slopes"
+  ]
+}
