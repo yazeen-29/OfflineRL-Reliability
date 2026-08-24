@@ -1,0 +1,38 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+======================================================================
+NEAREST-NEIGHBOR EXPLANATION BASELINE
+======================================================================
+Task       : mujoco/hopper/medium-v0
+Checkpoint : checkpoints/iql_100k/iql_mujoco_hopper_medium-v0_seed0.d3
+Seed       : 0
+Queries    : 100
+======================================================================
+
+[1/5] Loading frozen IQL checkpoint...
+[OK] Policy loaded: IQL
+
+[2/5] Loading Minari dataset...
+[2m2026-08-24 19:20.15[0m [[32m[1minfo     [0m] [1mSignatures have been automatically determined.[0m [36maction_signature[0m=[35mSignature(dtype=[dtype('float32')], shape=[(3,)])[0m [36mobservation_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(11,)])[0m [36mreward_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(1,)])[0m
+[2m2026-08-24 19:20.15[0m [[32m[1minfo     [0m] [1mAction-space has been automatically determined.[0m [36maction_space[0m=[35m<ActionSpace.CONTINUOUS: 1>[0m
+[2m2026-08-24 19:20.15[0m [[32m[1minfo     [0m] [1mAction size has been automatically determined.[0m [36maction_size[0m=[35m3[0m
+[OK] Dataset episodes: 1327
+
+[3/5] Extracting dataset observations...
+[OK] Observations: (999404, 11)
+Building nearest-neighbor index...
+[OK] Index built
+
+[4/5] Evaluating dataset coverage...
+Mean nearest-other distance: 0.14202243366439135
+Std nearest-other distance: 0.0747119539300029
+
+[5/5] Generating explanation examples...
+
+======================================================================
+EXPLANATION BASELINE COMPLETE
+======================================================================
+Saved: results/explanations/iql_100k_nearest_neighbor_baseline.json
+======================================================================

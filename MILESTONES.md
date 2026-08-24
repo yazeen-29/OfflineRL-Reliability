@@ -82,3 +82,36 @@ Arch return:   5.541287391475207
 Difference:    5.039508428339445e-07
 
 Status: CHECKPOINT REPRODUCED LOCALLY
+
+## ✅ M5 — Nearest-neighbor explanation baseline
+
+Experiment:
+IQL-100K-nearest-neighbor-explanation-baseline
+
+Reference policy:
+checkpoints/iql_100k/iql_mujoco_hopper_medium-v0_seed0.d3
+
+Dataset:
+mujoco/hopper/medium-v0
+
+Episodes:
+1327
+
+Dataset observations:
+999404
+
+Observation dimension:
+11
+
+Queries:
+100
+
+Nearest-other-state distance:
+- Mean: 0.14202243366439135
+- Std: 0.0747119539300029
+- Median: 0.12882323611384422
+- Min: 0.0029248404721406787
+- Max: 2.212756981226611
+
+Status:
+EXPLANATION BASELINE COMPLETE
