@@ -1,0 +1,112 @@
+{
+  "source_experiment": "IQL-100K-research-grade-gaussian-observation-shift",
+  "task": "mujoco/hopper/medium-v0",
+  "seed": 0,
+  "checkpoint": "checkpoints/iql_100k/iql_mujoco_hopper_medium-v0_seed0.d3",
+  "query_observations": 1000,
+  "noise_repeats": 5,
+  "primary_result": {
+    "correlation": {
+      "label": "OOD distance vs explanation disagreement",
+      "pearson_r": 0.9993875927357188,
+      "pearson_p": 1.7820183748763496e-08,
+      "spearman_rho": 1.0,
+      "spearman_p": 0.0
+    },
+    "regression": {
+      "label": "OOD distance vs explanation disagreement",
+      "slope": 0.13024667937759252,
+      "intercept": 0.003720662660296907,
+      "r_value": 0.9993875927357188,
+      "r_squared": 0.9987755605140949,
+      "p_value": 1.7820183748763525e-08,
+      "stderr": 0.0020394655201851847
+    }
+  },
+  "secondary_results": {
+    "noise_vs_explanation": {
+      "label": "noise level vs explanation disagreement",
+      "pearson_r": 0.9968729491708241,
+      "pearson_p": 1.0484875321076338e-06,
+      "spearman_rho": 1.0,
+      "spearman_p": 0.0
+    },
+    "noise_vs_policy_change": {
+      "label": "noise level vs policy action change",
+      "pearson_r": 0.9982010645703846,
+      "pearson_p": 2.633747359872458e-07,
+      "spearman_rho": 1.0,
+      "spearman_p": 0.0
+    },
+    "ood_vs_policy_change": {
+      "label": "OOD distance vs policy action change",
+      "pearson_r": 0.9871089329511323,
+      "pearson_p": 3.598903367129453e-05,
+      "spearman_rho": 1.0,
+      "spearman_p": 0.0
+    }
+  },
+  "clean_baseline": {
+    "nn_distance": 0.13372289653488842,
+    "policy_action_change": 0.0,
+    "explanation_disagreement": 0.020586444165149414
+  },
+  "level_results": [
+    {
+      "noise_level": 0.0,
+      "nn_distance": 0.13372289653488842,
+      "policy_action_change": 0.0,
+      "explanation_disagreement": 0.020586444165149414,
+      "nn_relative_increase": 0.0,
+      "explanation_relative_increase": 0.0
+    },
+    {
+      "noise_level": 0.01,
+      "nn_distance": 0.13630277140573102,
+      "policy_action_change": 0.005129362744247809,
+      "explanation_disagreement": 0.020734188965734025,
+      "nn_relative_increase": 0.01929269360516365,
+      "explanation_relative_increase": 0.007176800393470887
+    },
+    {
+      "noise_level": 0.025,
+      "nn_distance": 0.14852154080726512,
+      "policy_action_change": 0.01245488410682837,
+      "explanation_disagreement": 0.022436343189278448,
+      "nn_relative_increase": 0.11066649508684345,
+      "explanation_relative_increase": 0.08986005593237466
+    },
+    {
+      "noise_level": 0.05,
+      "nn_distance": 0.18200620584705277,
+      "policy_action_change": 0.025028339477198517,
+      "explanation_disagreement": 0.02770751962508304,
+      "nn_relative_increase": 0.3610698733224582,
+      "explanation_relative_increase": 0.3459109015042445
+    },
+    {
+      "noise_level": 0.1,
+      "nn_distance": 0.27812252031660245,
+      "policy_action_change": 0.04832346107658985,
+      "explanation_disagreement": 0.04128276392791555,
+      "nn_relative_increase": 1.0798421775439186,
+      "explanation_relative_increase": 1.0053372790723485
+    },
+    {
+      "noise_level": 0.2,
+      "nn_distance": 0.5052479456392923,
+      "policy_action_change": 0.09029831177205173,
+      "explanation_disagreement": 0.07107074015263547,
+      "nn_relative_increase": 2.778320382908193,
+      "explanation_relative_increase": 2.4523077216487152
+    },
+    {
+      "noise_level": 0.3,
+      "nn_distance": 0.7524970012321517,
+      "policy_action_change": 0.1254867281562635,
+      "explanation_disagreement": 0.10048836420146415,
+      "nn_relative_increase": 4.627286132228107,
+      "explanation_relative_increase": 3.8812880648703723
+    }
+  ]
+}
