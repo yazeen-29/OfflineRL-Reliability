@@ -1,0 +1,33 @@
+==============================================================================
+PAPER-GRADE QUERY-LEVEL GAUSSIAN SHIFT ANALYSIS
+==============================================================================
+Queries: 1000
+Noise levels: [0.    0.01  0.025 0.05  0.1   0.2   0.3  ]
+Repeats per query/level: [5]
+
+Clean baseline:
+Mean NN distance: 0.13372289653488845
+Mean explanation disagreement: 0.02058644416514941
+
+==============================================================================
+PRIMARY QUERY-SLOPE RESULT
+Positive slope fraction: 0.998
+Mean slope: {'estimate': 0.13137247605337465, 'ci95_low': 0.12808270114957163, 'ci95_high': 0.1346853016981216, 'n': 1000}
+Wilcoxon p: 2.9678500722334494e-165
+Sign-flip permutation p: 9.999000099990002e-05
+
+DESCRIPTIVE RELATIONSHIP
+Pearson r: 0.8313972394978849
+Spearman rho: 0.860258303014018
+
+HOLM-CORRECTED EXPLANATION TESTS
+noise=0.000 Holm-p=1.000000e+00
+noise=0.010 Holm-p=5.555389e-04
+noise=0.025 Holm-p=2.288902e-19
+noise=0.050 Holm-p=3.115494e-69
+noise=0.100 Holm-p=2.597626e-132
+noise=0.200 Holm-p=5.890089e-163
+noise=0.300 Holm-p=6.159896e-164
+
+Saved: results/analysis/iql_100k_gaussian_shift_analysis_v3.json
+==============================================================================
