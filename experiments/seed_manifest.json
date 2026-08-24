@@ -1,0 +1,27 @@
+{
+  "experiment": "IQL-100K-multi-seed-replication",
+  "task": "mujoco/hopper/medium-v0",
+  "algorithm": "iql",
+  "training_steps": 100000,
+  "device": "cuda:0",
+  "seeds": [0, 1, 2, 3, 4],
+  "reference_fraction": 0.90,
+  "num_queries": 1000,
+  "noise_repeats": 5,
+  "noise_levels": [
+    0.0,
+    0.01,
+    0.025,
+    0.05,
+    0.10,
+    0.20,
+    0.30
+  ],
+  "status": {
+    "seed_0": "complete",
+    "seed_1": "pending",
+    "seed_2": "pending",
+    "seed_3": "pending",
+    "seed_4": "pending"
+  }
+}
