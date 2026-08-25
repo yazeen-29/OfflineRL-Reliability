@@ -1,0 +1,85 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+==============================================================================
+RANDOM-REFERENCE CONTROL EXPERIMENT
+==============================================================================
+Task              : mujoco/hopper/medium-v0
+Checkpoint        : checkpoints/iql_replications/iql_seed2/iql_mujoco_hopper_medium-v0_seed2.d3
+Seed              : 2
+Queries            : 1000
+Noise repeats      : 5
+Noise levels       : [0.0, 0.01, 0.025, 0.05, 0.1, 0.2, 0.3]
+Reference fraction : 0.9
+==============================================================================
+
+[1/8] Loading frozen IQL policy...
+[OK] Policy: IQL
+
+[2/8] Loading offline dataset...
+[2m2026-08-25 17:53.27[0m [[32m[1minfo     [0m] [1mSignatures have been automatically determined.[0m [36maction_signature[0m=[35mSignature(dtype=[dtype('float32')], shape=[(3,)])[0m [36mobservation_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(11,)])[0m [36mreward_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(1,)])[0m
+[2m2026-08-25 17:53.27[0m [[32m[1minfo     [0m] [1mAction-space has been automatically determined.[0m [36maction_space[0m=[35m<ActionSpace.CONTINUOUS: 1>[0m
+[2m2026-08-25 17:53.27[0m [[32m[1minfo     [0m] [1mAction size has been automatically determined.[0m [36maction_size[0m=[35m3[0m
+[OK] Episodes: 1327
+
+[3/8] Creating episode-level split...
+[OK] Reference episodes: 1194
+[OK] Query episodes: 133
+[OK] Reference observations: 901322
+[OK] Query observations: 1000
+
+[4/8] Standardizing observations...
+[OK] Reference standardization fitted
+
+[5/8] Creating deterministic random-reference assignments...
+[OK] Random references assigned
+
+[6/8] Computing clean random-reference baseline...
+[OK] Mean nearest-neighbor distance: 0.13725808956226337
+[OK] Mean random-reference disagreement: 0.21762925443572484
+
+[7/8] Running controlled Gaussian shifts...
+
+Noise level = 0.0000
+  NN distance: 0.13725808956226337
+  Policy action change: 0.0
+  Random-reference disagreement: 0.21762925443572484
+
+Noise level = 0.0100
+  NN distance: 0.13990246016915633
+  Policy action change: 0.00581982767408828
+  Random-reference disagreement: 0.21757686204533722
+
+Noise level = 0.0250
+  NN distance: 0.15210709136660744
+  Policy action change: 0.014170687349500525
+  Random-reference disagreement: 0.21780573873183884
+
+Noise level = 0.0500
+  NN distance: 0.1856530440759471
+  Policy action change: 0.02863119635677208
+  Random-reference disagreement: 0.2186698764253039
+
+Noise level = 0.1000
+  NN distance: 0.28062386387487703
+  Policy action change: 0.054718066047643184
+  Random-reference disagreement: 0.21953179333208986
+
+Noise level = 0.2000
+  NN distance: 0.5069402539164359
+  Policy action change: 0.10292185909823977
+  Random-reference disagreement: 0.2231952092473277
+
+Noise level = 0.3000
+  NN distance: 0.7472374516190706
+  Policy action change: 0.14102832410454638
+  Random-reference disagreement: 0.23144680328649442
+
+[8/8] Saving random-reference control...
+
+==============================================================================
+RANDOM-REFERENCE CONTROL COMPLETE
+==============================================================================
+Saved: results/shifts/random_reference/iql_seed2_random_reference.json
+==============================================================================
