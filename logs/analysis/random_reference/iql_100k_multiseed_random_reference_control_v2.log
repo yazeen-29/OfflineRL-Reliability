@@ -1,0 +1,43 @@
+================================================================================
+FINAL CROSS-SEED RANDOM-REFERENCE CONTROL ANALYSIS
+================================================================================
+
+Loading seed 0
+  NN noise slope: 0.2738315579734438
+  Random noise slope: 0.03024848066955342
+  NN - Random slope: 0.24358307730389034
+
+Loading seed 1
+  NN noise slope: 0.2831869162146071
+  Random noise slope: 0.034626692027012504
+  NN - Random slope: 0.2485602241875946
+
+Loading seed 2
+  NN noise slope: 0.30701945949913645
+  Random noise slope: 0.043411705934455216
+  NN - Random slope: 0.26360775356468125
+
+Loading seed 3
+  NN noise slope: 0.26688848438319523
+  Random noise slope: 0.038456852661301284
+  NN - Random slope: 0.22843163172189396
+
+Loading seed 4
+  NN noise slope: 0.25312079636621
+  Random noise slope: 0.0382729435472099
+  NN - Random slope: 0.2148478528190001
+
+================================================================================
+FINAL CROSS-SEED CONTROL RESULT
+================================================================================
+NN mean noise slope: 0.27680944288731846
+NN 95% CI: (0.2518078479320779, 0.301811037842559)
+Random mean noise slope: 0.03700333496790646
+Random 95% CI: (0.030918284203305453, 0.04308838573250747)
+NN - Random slope difference: 0.23980610791941204
+Difference 95% CI: (0.21649627134379235, 0.26311594449503173)
+Exact one-sided sign-flip p: 0.03125
+Exact two-sided sign-flip p: 0.0625
+
+Saved: results/analysis/iql_100k_multiseed_random_reference_control_v2.json
+================================================================================
