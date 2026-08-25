@@ -1,0 +1,47 @@
+================================================================================
+CROSS-SEED STRUCTURED SHIFT ANALYSIS
+================================================================================
+
+Seed 0
+  Explanation slope: 0.2425382669325896
+  NN-distance slope: 2.0295040438536236
+  Policy-action slope: 0.3863404161512795
+  Positive adjacent fraction: 1.0
+
+Seed 1
+  Explanation slope: 0.2711615447514371
+  NN-distance slope: 2.043421245098611
+  Policy-action slope: 0.41138137713314943
+  Positive adjacent fraction: 1.0
+
+Seed 2
+  Explanation slope: 0.3028229661369911
+  NN-distance slope: 2.0329338886270882
+  Policy-action slope: 0.5006404833312066
+  Positive adjacent fraction: 1.0
+
+Seed 3
+  Explanation slope: 0.23687564406987313
+  NN-distance slope: 2.0058320674891696
+  Policy-action slope: 0.40861731386586075
+  Positive adjacent fraction: 0.8333333333333334
+
+Seed 4
+  Explanation slope: 0.2964269845285047
+  NN-distance slope: 2.0287500169309327
+  Policy-action slope: 0.45142694553948126
+  Positive adjacent fraction: 1.0
+
+================================================================================
+CROSS-SEED STRUCTURED SHIFT RESULT
+================================================================================
+Mean explanation slope: 0.2699650812838791
+Explanation 95% CI: (0.2325682855440701, 0.30736187702368806)
+Mean NN-distance slope: 2.028088252399885
+Mean policy-action slope: 0.43168130720419545
+Mean positive adjacent fraction: 0.9666666666666668
+Exact one-sided sign-flip p: 0.03125
+Exact two-sided sign-flip p: 0.0625
+
+Saved: results/analysis/iql_100k_multiseed_structured_analysis.json
+================================================================================

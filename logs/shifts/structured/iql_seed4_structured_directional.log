@@ -1,0 +1,108 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+================================================================================
+STRUCTURED DIRECTIONAL OBSERVATION-SHIFT EXPERIMENT
+================================================================================
+Task              : mujoco/hopper/medium-v0
+Checkpoint        : checkpoints/iql_replications/iql_seed4/iql_mujoco_hopper_medium-v0_seed4.d3
+Seed              : 4
+Queries            : 1000
+Repeats            : 1
+Reference fraction : 0.9
+Direction          : all_features_positive_unit_vector
+================================================================================
+
+[1/8] Loading frozen IQL policy...
+[OK] Policy: IQL
+
+[2/8] Loading offline dataset...
+[2m2026-08-25 19:11.33[0m [[32m[1minfo     [0m] [1mSignatures have been automatically determined.[0m [36maction_signature[0m=[35mSignature(dtype=[dtype('float32')], shape=[(3,)])[0m [36mobservation_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(11,)])[0m [36mreward_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(1,)])[0m
+[2m2026-08-25 19:11.33[0m [[32m[1minfo     [0m] [1mAction-space has been automatically determined.[0m [36maction_space[0m=[35m<ActionSpace.CONTINUOUS: 1>[0m
+[2m2026-08-25 19:11.33[0m [[32m[1minfo     [0m] [1mAction size has been automatically determined.[0m [36maction_size[0m=[35m3[0m
+[OK] Episodes: 1327
+
+[3/8] Creating episode-level split...
+[OK] Reference episodes: 1194
+[OK] Query episodes: 133
+[OK] Reference observations: 898507
+[OK] Query observations: 1000
+
+[4/8] Standardizing observations...
+[OK] Observation dimension: 11
+[OK] Direction norm: 1.0
+[OK] Gaussian-equivalent levels:
+    sigma=0.000 -> delta=0.000000
+    sigma=0.010 -> delta=0.033166
+    sigma=0.025 -> delta=0.082916
+    sigma=0.050 -> delta=0.165831
+    sigma=0.100 -> delta=0.331662
+    sigma=0.200 -> delta=0.663325
+    sigma=0.300 -> delta=0.994987
+
+[5/8] Building nearest-neighbor index...
+[OK] Index built
+
+[6/8] Computing clean baseline...
+[OK] Clean mean NN distance: 0.13676494464245087
+[OK] Clean mean explanation disagreement: 0.021327134896225657
+
+[7/8] Running structured directional shifts...
+
+Gaussian-equivalent sigma = 0.0000
+Structured magnitude delta = 0.000000
+  Standardized displacement: 0.0
+  NN distance: 0.13676494464245087
+  Policy action change: 0.0
+  Explanation disagreement: 0.021327134896225657
+
+Gaussian-equivalent sigma = 0.0100
+Structured magnitude delta = 0.033166
+  Standardized displacement: 0.03316624790355399
+  NN distance: 0.13922993799678413
+  Policy action change: 0.0048054505477546205
+  Explanation disagreement: 0.022008912716086283
+
+Gaussian-equivalent sigma = 0.0250
+Structured magnitude delta = 0.082916
+  Standardized displacement: 0.08291561975888492
+  NN distance: 0.15018342658111158
+  Policy action change: 0.012033095186539423
+  Explanation disagreement: 0.023332714099085352
+
+Gaussian-equivalent sigma = 0.0500
+Structured magnitude delta = 0.165831
+  Standardized displacement: 0.1658312395177701
+  NN distance: 0.18290681139715748
+  Policy action change: 0.024057054093032
+  Explanation disagreement: 0.027705276058229224
+
+Gaussian-equivalent sigma = 0.1000
+Structured magnitude delta = 0.331662
+  Standardized displacement: 0.3316624790355401
+  NN distance: 0.27567054008235015
+  Policy action change: 0.04786856403632884
+  Explanation disagreement: 0.04275141311690358
+
+Gaussian-equivalent sigma = 0.2000
+Structured magnitude delta = 0.663325
+  Standardized displacement: 0.66332495807108
+  NN distance: 0.4983367198900441
+  Policy action change: 0.09325975504832666
+  Explanation disagreement: 0.07709404962167117
+
+Gaussian-equivalent sigma = 0.3000
+Structured magnitude delta = 0.994987
+  Standardized displacement: 0.9949874371066199
+  NN distance: 0.7341100615053086
+  Policy action change: 0.134643923559402
+  Explanation disagreement: 0.10718115612464833
+
+[8/8] Saving experiment results...
+
+================================================================================
+STRUCTURED DIRECTIONAL SHIFT COMPLETE
+================================================================================
+Saved: results/shifts/structured/iql_seed4_structured_directional.json
+================================================================================
