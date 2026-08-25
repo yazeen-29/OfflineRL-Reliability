@@ -1,0 +1,53 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+==============================================================================
+DISTANCE-MATCHED RANDOM-REFERENCE CONTROL
+==============================================================================
+Task              : mujoco/hopper/medium-v0
+Checkpoint        : checkpoints/iql_100k/iql_mujoco_hopper_medium-v0_seed0.d3
+Seed              : 0
+Queries            : 100
+Noise repeats      : 2
+Noise levels       : [0.0, 0.01, 0.025, 0.05, 0.1, 0.2, 0.3]
+Reference fraction : 0.9
+K nearest candidates: 128
+Random top candidates: 8
+10% matching criterion: <= 10%
+==============================================================================
+
+[1/9] Loading frozen IQL policy...
+[OK] Policy: IQL
+
+[2/9] Loading offline dataset...
+[2m2026-08-25 17:29.14[0m [[32m[1minfo     [0m] [1mSignatures have been automatically determined.[0m [36maction_signature[0m=[35mSignature(dtype=[dtype('float32')], shape=[(3,)])[0m [36mobservation_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(11,)])[0m [36mreward_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(1,)])[0m
+[2m2026-08-25 17:29.14[0m [[32m[1minfo     [0m] [1mAction-space has been automatically determined.[0m [36maction_space[0m=[35m<ActionSpace.CONTINUOUS: 1>[0m
+[2m2026-08-25 17:29.14[0m [[32m[1minfo     [0m] [1mAction size has been automatically determined.[0m [36maction_size[0m=[35m3[0m
+[OK] Episodes: 1327
+
+[3/9] Creating episode-level split...
+[OK] Reference episodes: 1194
+[OK] Query episodes: 133
+[OK] Reference observations: 902059
+[OK] Query observations: 100
+
+[4/9] Standardizing observations...
+[OK] Reference standardization fitted
+
+[5/9] Evaluating distance-matching quality...
+[OK] Diagnostic queries: 100
+[OK] Mean matched/NN ratio: 1.4131362884374397
+[OK] Median matched/NN ratio: 1.3548546489012088
+[OK] Mean relative distance error: 0.4131362884374395
+[OK] Fraction within ±10%: 0.08
+Traceback (most recent call last):
+  File "/home/yazeen/OfflineRL-Reliability/src/explanations/distance_matched_random_reference.py", line 1603, in <module>
+    main()
+  File "/home/yazeen/OfflineRL-Reliability/src/explanations/distance_matched_random_reference.py", line 801, in main
+    raise RuntimeError(
+RuntimeError: 
+DISTANCE-MATCHING QUALITY TOO LOW.
+Only 8.0% of diagnostic queries have a matched reference within ±10% of the nearest-neighbor distance.
+
+Do NOT run the full experiment yet. The reference pool does not provide sufficiently close alternative states under this fixed protocol.

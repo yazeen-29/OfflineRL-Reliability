@@ -1,0 +1,128 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+==============================================================================
+DISTANCE-MATCHED RANDOM-REFERENCE CONTROL
+==============================================================================
+Task              : mujoco/hopper/medium-v0
+Checkpoint        : checkpoints/iql_100k/iql_mujoco_hopper_medium-v0_seed0.d3
+Seed              : 0
+Queries            : 100
+Noise repeats      : 2
+Noise levels       : [0.0, 0.01, 0.025, 0.05, 0.1, 0.2, 0.3]
+Reference fraction : 0.9
+Primary band       : [0.95d, 1.05d]
+==============================================================================
+
+[1/9] Loading frozen IQL policy...
+[OK] Policy: IQL
+
+[2/9] Loading offline dataset...
+[2m2026-08-25 17:24.55[0m [[32m[1minfo     [0m] [1mSignatures have been automatically determined.[0m [36maction_signature[0m=[35mSignature(dtype=[dtype('float32')], shape=[(3,)])[0m [36mobservation_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(11,)])[0m [36mreward_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(1,)])[0m
+[2m2026-08-25 17:24.55[0m [[32m[1minfo     [0m] [1mAction-space has been automatically determined.[0m [36maction_space[0m=[35m<ActionSpace.CONTINUOUS: 1>[0m
+[2m2026-08-25 17:24.55[0m [[32m[1minfo     [0m] [1mAction size has been automatically determined.[0m [36maction_size[0m=[35m3[0m
+[OK] Episodes: 1327
+
+[3/9] Creating episode-level split...
+[OK] Reference episodes: 1194
+[OK] Query episodes: 133
+[OK] Reference observations: 902059
+[OK] Query observations: 100
+
+[4/9] Standardizing observations...
+[OK] Reference standardization fitted
+
+[5/9] Testing distance matching on clean queries...
+[OK] Diagnostic queries: 100
+[OK] Mean matched/NN distance ratio: 1.235050773205109
+[OK] Max |distance ratio - 1|: 2.9076481286855724
+[OK] Mean absolute distance error: 0.025558970869511734
+[OK] Mean candidate count: 3.26
+[OK] Diagnostic fallback count: 67
+
+[6/9] Computing clean distance-matched baseline...
+[OK] Mean NN distance: 0.14962416005631599
+[OK] Mean matched distance: 0.17598718877926306
+[OK] Mean |matched - NN|: 0.02636302872294708
+[OK] Mean matched/NN ratio: 1.238693827842547
+[OK] Clean matched-reference disagreement: 0.02897340297664556
+[OK] Clean fallback count: 134
+
+[7/9] Running controlled Gaussian shifts...
+
+Noise level = 0.0000
+  NN distance: 0.14962416005631599
+  Matched-reference distance: 0.17650252502452765
+  Mean |matched - NN|: 0.026878364968211686
+  Mean matched/NN ratio: 1.245378073399121
+  Policy action change: 0.0
+  Matched-reference disagreement: 0.028040687101715464
+  Fallback count: 134
+
+Noise level = 0.0100
+  NN distance: 0.1513627772958119
+  Matched-reference distance: 0.17538986946846122
+  Mean |matched - NN|: 0.024027092172649322
+  Mean matched/NN ratio: 1.1971052371697442
+  Policy action change: 0.004798069315233844
+  Matched-reference disagreement: 0.026211512439939293
+  Fallback count: 139
+
+Noise level = 0.0250
+  NN distance: 0.16434526931093313
+  Matched-reference distance: 0.18777195441796735
+  Mean |matched - NN|: 0.02342668510703419
+  Mean matched/NN ratio: 1.1589013268346795
+  Policy action change: 0.012527339653544231
+  Matched-reference disagreement: 0.028319371805589584
+  Fallback count: 144
+
+Noise level = 0.0500
+  NN distance: 0.19818137347833584
+  Matched-reference distance: 0.2181583032469573
+  Mean |matched - NN|: 0.019976929768621424
+  Mean matched/NN ratio: 1.1094932423201838
+  Policy action change: 0.02478357377814417
+  Matched-reference disagreement: 0.03138868771210084
+  Fallback count: 122
+
+Noise level = 0.1000
+  NN distance: 0.2843514286480041
+  Matched-reference distance: 0.30689804089493555
+  Mean |matched - NN|: 0.02254661224693143
+  Mean matched/NN ratio: 1.0847319517799492
+  Policy action change: 0.04744496298428018
+  Matched-reference disagreement: 0.044226269356771264
+  Fallback count: 94
+
+Noise level = 0.2000
+  NN distance: 0.5057898312207073
+  Matched-reference distance: 0.5287355107822062
+  Mean |matched - NN|: 0.022945679561498865
+  Mean matched/NN ratio: 1.0479953878785357
+  Policy action change: 0.08580489602886032
+  Matched-reference disagreement: 0.07364224902023539
+  Fallback count: 45
+
+Noise level = 0.3000
+  NN distance: 0.7549126765280165
+  Matched-reference distance: 0.7832803297758784
+  Mean |matched - NN|: 0.028367653247861994
+  Mean matched/NN ratio: 1.039144690464851
+  Policy action change: 0.1258898106240841
+  Matched-reference disagreement: 0.09284354319968888
+  Fallback count: 23
+
+[8/9] Validating distance matching...
+[OK] Overall strict-band fraction: 0.4992857142857143
+[OK] Overall mean matched/NN ratio: 1.1261071299781522
+[OK] Overall max |ratio - 1|: 3.3686170579565875
+
+[9/9] Saving experiment results...
+
+==============================================================================
+DISTANCE-MATCHED CONTROL COMPLETE
+==============================================================================
+Saved: results/shifts/random_reference/iql_seed0_distance_matched_smoke.json
+==============================================================================
