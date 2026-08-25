@@ -1,0 +1,24 @@
+================================================================================
+FINAL PAPER-QUALITY STRUCTURED FIGURE GENERATION
+================================================================================
+
+Loading frozen Gaussian raw results...
+Loading Gaussian seed 0: results/shifts/iql_100k_gaussian_observation_noise.json
+Loading Gaussian seed 1: results/shifts/multiseed/iql_seed1_gaussian_observation_noise.json
+Loading Gaussian seed 2: results/shifts/multiseed/iql_seed2_gaussian_observation_noise.json
+Loading Gaussian seed 3: results/shifts/multiseed/iql_seed3_gaussian_observation_noise.json
+Loading Gaussian seed 4: results/shifts/multiseed/iql_seed4_gaussian_observation_noise.json
+
+================================================================================
+FINAL PAPER-QUALITY STRUCTURED FIGURES GENERATED
+================================================================================
+Output: paper/figures/structured
+Mean explanation slope: 0.2699650812838791
+95% CI: (0.2325682855440701, 0.30736187702368806)
+Exact one-sided p: 0.03125
+
+Generated:
+  Figure 1: structured relationship
+  Figure 2: structured dose response
+  Figure 3: Gaussian vs structured robustness
+================================================================================

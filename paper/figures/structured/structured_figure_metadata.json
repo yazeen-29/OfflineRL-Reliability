@@ -1,0 +1,43 @@
+{
+  "analysis_source": "results/analysis/iql_100k_multiseed_structured_analysis.json",
+  "gaussian_sources": {
+    "0": "results/shifts/iql_100k_gaussian_observation_noise.json",
+    "1": "results/shifts/multiseed/iql_seed1_gaussian_observation_noise.json",
+    "2": "results/shifts/multiseed/iql_seed2_gaussian_observation_noise.json",
+    "3": "results/shifts/multiseed/iql_seed3_gaussian_observation_noise.json",
+    "4": "results/shifts/multiseed/iql_seed4_gaussian_observation_noise.json"
+  },
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "sigma_levels": [
+    0.0,
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "figures": [
+    "figure1_structured_nn_vs_explanation.png",
+    "figure1_structured_nn_vs_explanation.pdf",
+    "figure2_structured_dose_response.png",
+    "figure2_structured_dose_response.pdf",
+    "figure3_gaussian_vs_structured.png",
+    "figure3_gaussian_vs_structured.pdf"
+  ],
+  "structured_statistics": {
+    "mean_explanation_slope": 0.2699650812838791,
+    "ci95_low": 0.2325682855440701,
+    "ci95_high": 0.30736187702368806,
+    "exact_one_sided_p": 0.03125,
+    "exact_two_sided_p": 0.0625
+  },
+  "figure2_axis_note": "The x-axis is standardized directional shift magnitude. Shift magnitudes are calibrated so their standardized L2 displacement matches the expected magnitude of the corresponding Gaussian perturbation.",
+  "figure3_note": "The Gaussian and structured panels are shown as a robustness comparison. The panels use matched axes and should not be interpreted as identical causal effect-size scales."
+}
