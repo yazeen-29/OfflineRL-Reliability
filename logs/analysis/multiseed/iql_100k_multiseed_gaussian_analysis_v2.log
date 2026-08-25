@@ -1,0 +1,66 @@
+================================================================================
+PAPER-GRADE CROSS-SEED IQL GAUSSIAN SHIFT ANALYSIS
+================================================================================
+
+Seed 0
+  Records: 35000
+  Queries: 1000
+  Repeats: 5
+  Positive slope fraction: 0.998
+  Mean query slope: 0.13137247605337465
+  Query-level CI95: (0.12810415714957038, 0.13464079495717893)
+
+Seed 1
+  Records: 35000
+  Queries: 1000
+  Repeats: 5
+  Positive slope fraction: 0.997
+  Mean query slope: 0.1366127284423408
+  Query-level CI95: (0.1335860269764197, 0.1396394299082619)
+
+Seed 2
+  Records: 35000
+  Queries: 1000
+  Repeats: 5
+  Positive slope fraction: 0.998
+  Mean query slope: 0.14931119277832494
+  Query-level CI95: (0.1456462309391541, 0.15297615461749578)
+
+Seed 3
+  Records: 35000
+  Queries: 1000
+  Repeats: 5
+  Positive slope fraction: 0.995
+  Mean query slope: 0.13045658251905629
+  Query-level CI95: (0.1276408614547807, 0.13327230358333186)
+
+Seed 4
+  Records: 35000
+  Queries: 1000
+  Repeats: 5
+  Positive slope fraction: 0.997
+  Mean query slope: 0.12360737527342232
+  Query-level CI95: (0.12095864345441297, 0.12625610709243168)
+
+================================================================================
+CROSS-SEED PRIMARY RESULT
+================================================================================
+Policy-seed mean slope: 0.1342720710133038
+Policy-seed slope SD: 0.00959629094062996
+Policy-seed slope 95% CI: (0.12235670203603462, 0.146187439990573)
+Mean positive-slope fraction: 0.9970000000000001
+Positive-slope fraction 95% CI: (0.9954792783862084, 0.9985207216137918)
+
+EXACT POLICY-SEED SIGN-FLIP TEST
+Observed mean slope: 0.1342720710133038
+One-sided p: 0.03125
+Two-sided p: 0.0625
+Exact sign assignments: 32
+
+OUTPUT VALIDATION
+Policy seeds: [0, 1, 2, 3, 4]
+Queries/seed: 1000
+Repeats/query/level: 5
+Records/seed: 35000
+
+Saved: results/analysis/multiseed/iql_100k_multiseed_gaussian_analysis_v2.json
