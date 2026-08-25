@@ -1,0 +1,87 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+============================================================================
+RESEARCH-GRADE GAUSSIAN OBSERVATION-SHIFT EXPERIMENT
+============================================================================
+Task              : mujoco/hopper/medium-v0
+Checkpoint        : checkpoints/iql_replications/iql_seed4/iql_mujoco_hopper_medium-v0_seed4.d3
+Seed              : 4
+Queries            : 1000
+Noise repeats      : 5
+Noise levels       : [0.0, 0.01, 0.025, 0.05, 0.1, 0.2, 0.3]
+Reference fraction : 0.9
+============================================================================
+
+[1/7] Loading frozen IQL policy...
+[OK] Policy: IQL
+
+[2/7] Loading offline dataset...
+[2m2026-08-25 00:31.57[0m [[32m[1minfo     [0m] [1mSignatures have been automatically determined.[0m [36maction_signature[0m=[35mSignature(dtype=[dtype('float32')], shape=[(3,)])[0m [36mobservation_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(11,)])[0m [36mreward_signature[0m=[35mSignature(dtype=[dtype('float64')], shape=[(1,)])[0m
+[2m2026-08-25 00:31.57[0m [[32m[1minfo     [0m] [1mAction-space has been automatically determined.[0m [36maction_space[0m=[35m<ActionSpace.CONTINUOUS: 1>[0m
+[2m2026-08-25 00:31.57[0m [[32m[1minfo     [0m] [1mAction size has been automatically determined.[0m [36maction_size[0m=[35m3[0m
+[OK] Episodes: 1327
+
+[3/7] Creating episode-level split...
+[OK] Reference episodes: 1194
+[OK] Query episodes: 133
+[OK] Reference observations: 898507
+[OK] Query observations: 1000
+
+[4/7] Standardizing observations...
+[OK] Feature standard deviations:
+[0.162579   0.06244298 0.20902529 0.28933167 0.61145292 0.82550325
+ 1.43561868 1.15047807 2.29818728 3.36408945 6.10607633]
+
+Building nearest-neighbor index...
+[OK] Nearest-neighbor index built
+
+[5/7] Computing clean baseline...
+[OK] Clean mean NN distance: 0.13676494464245087
+[OK] Clean mean action disagreement: 0.021327134896225657
+
+[6/7] Running controlled Gaussian shifts...
+
+Noise level = 0.0000
+  NN distance: 0.13676494464245087
+  Policy action change: 0.0
+  Explanation disagreement: 0.021327134896225657
+
+Noise level = 0.0100
+  NN distance: 0.13917840225751935
+  Policy action change: 0.004971860439340418
+  Explanation disagreement: 0.02150911079929347
+
+Noise level = 0.0250
+  NN distance: 0.1514385719489379
+  Policy action change: 0.012474692544196886
+  Explanation disagreement: 0.023260438879016472
+
+Noise level = 0.0500
+  NN distance: 0.1855521388671849
+  Policy action change: 0.025088826716841657
+  Explanation disagreement: 0.028380820356148046
+
+Noise level = 0.1000
+  NN distance: 0.2791343824086097
+  Policy action change: 0.047702870018931545
+  Explanation disagreement: 0.04099296472347489
+
+Noise level = 0.2000
+  NN distance: 0.5077432111469092
+  Policy action change: 0.08964408909829394
+  Explanation disagreement: 0.06971792448535351
+
+Noise level = 0.3000
+  NN distance: 0.7398684607932801
+  Policy action change: 0.12156328306109918
+  Explanation disagreement: 0.09452039254920586
+
+[7/7] Saving experiment results...
+
+============================================================================
+RESEARCH-GRADE SHIFT EXPERIMENT COMPLETE
+============================================================================
+Saved: results/shifts/multiseed/iql_seed4_gaussian_observation_noise.json
+============================================================================
