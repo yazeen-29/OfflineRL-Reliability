@@ -1,0 +1,209 @@
+{
+  "experiment": "IQL-100K-seed0-random-reference-control",
+  "task": "mujoco/hopper/medium-v0",
+  "seed": 0,
+  "analysis_unit": "paired query-level means after averaging five perturbation repeats within each query/noise-level cell",
+  "queries": 1000,
+  "noise_levels": [
+    0.0,
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "nearest_source": "results/shifts/iql_100k_gaussian_observation_noise.json",
+  "random_source": "results/shifts/random_reference/iql_seed0_random_reference.json",
+  "level_results": [
+    {
+      "noise_level": 0.0,
+      "nearest_neighbor": {
+        "mean": 0.02058644416514941,
+        "ci95_low": 0.019589481839463647,
+        "ci95_high": 0.02162205978820718
+      },
+      "uniform_random": {
+        "mean": 0.20292084968828203,
+        "ci95_low": 0.19919522191761724,
+        "ci95_high": 0.20662696727089705
+      },
+      "random_minus_nearest": {
+        "mean": 0.18233440552313263,
+        "ci95_low": 0.17862464521675736,
+        "ci95_high": 0.18599863863415814
+      },
+      "paired_test": {
+        "n_queries": 1000,
+        "mean_difference": 0.18233440552313263,
+        "median_difference": 0.17549648661500677,
+        "wilcoxon_statistic": 500500.0,
+        "wilcoxon_p": 1.6629295594672565e-165
+      }
+    },
+    {
+      "noise_level": 0.01,
+      "nearest_neighbor": {
+        "mean": 0.02073418896573402,
+        "ci95_low": 0.019819533499786168,
+        "ci95_high": 0.02165483064344095
+      },
+      "uniform_random": {
+        "mean": 0.2028626291314314,
+        "ci95_low": 0.19914573401208255,
+        "ci95_high": 0.20652173263730367
+      },
+      "random_minus_nearest": {
+        "mean": 0.18212844016569738,
+        "ci95_low": 0.17843018915341505,
+        "ci95_high": 0.18588634114913044
+      },
+      "paired_test": {
+        "n_queries": 1000,
+        "mean_difference": 0.18212844016569738,
+        "median_difference": 0.1756680473578005,
+        "wilcoxon_statistic": 500500.0,
+        "wilcoxon_p": 1.6629295594672565e-165
+      }
+    },
+    {
+      "noise_level": 0.025,
+      "nearest_neighbor": {
+        "mean": 0.022436343189278448,
+        "ci95_low": 0.02161480593438921,
+        "ci95_high": 0.023305685542998
+      },
+      "uniform_random": {
+        "mean": 0.20288471359262372,
+        "ci95_low": 0.19926151589075716,
+        "ci95_high": 0.2067191674581652
+      },
+      "random_minus_nearest": {
+        "mean": 0.18044837040334527,
+        "ci95_low": 0.1766834681931556,
+        "ci95_high": 0.18425166578305222
+      },
+      "paired_test": {
+        "n_queries": 1000,
+        "mean_difference": 0.18044837040334527,
+        "median_difference": 0.17367707332402643,
+        "wilcoxon_statistic": 500500.0,
+        "wilcoxon_p": 1.6629295594672565e-165
+      }
+    },
+    {
+      "noise_level": 0.05,
+      "nearest_neighbor": {
+        "mean": 0.027707519625083037,
+        "ci95_low": 0.026936404514465693,
+        "ci95_high": 0.028513894904597308
+      },
+      "uniform_random": {
+        "mean": 0.2029708467398178,
+        "ci95_low": 0.19925455776594198,
+        "ci95_high": 0.20673583409359994
+      },
+      "random_minus_nearest": {
+        "mean": 0.17526332711473475,
+        "ci95_low": 0.17160112136154007,
+        "ci95_high": 0.17901964220957237
+      },
+      "paired_test": {
+        "n_queries": 1000,
+        "mean_difference": 0.17526332711473475,
+        "median_difference": 0.16838280826868396,
+        "wilcoxon_statistic": 500500.0,
+        "wilcoxon_p": 1.6629295594672565e-165
+      }
+    },
+    {
+      "noise_level": 0.1,
+      "nearest_neighbor": {
+        "mean": 0.04128276392791555,
+        "ci95_low": 0.04021410599163565,
+        "ci95_high": 0.042321818942260864
+      },
+      "uniform_random": {
+        "mean": 0.20352988538954409,
+        "ci95_low": 0.2000581093988273,
+        "ci95_high": 0.20712405163309028
+      },
+      "random_minus_nearest": {
+        "mean": 0.16224712146162856,
+        "ci95_low": 0.15864893507670133,
+        "ci95_high": 0.16575807270445958
+      },
+      "paired_test": {
+        "n_queries": 1000,
+        "mean_difference": 0.16224712146162856,
+        "median_difference": 0.1546670930360762,
+        "wilcoxon_statistic": 500500.0,
+        "wilcoxon_p": 1.6629295594672565e-165
+      }
+    },
+    {
+      "noise_level": 0.2,
+      "nearest_neighbor": {
+        "mean": 0.07107074015263547,
+        "ci95_low": 0.06943872644627541,
+        "ci95_high": 0.07276821525669012
+      },
+      "uniform_random": {
+        "mean": 0.20483322054135913,
+        "ci95_low": 0.20148527729178187,
+        "ci95_high": 0.20815068191025568
+      },
+      "random_minus_nearest": {
+        "mean": 0.1337624803887237,
+        "ci95_low": 0.1305232679462974,
+        "ci95_high": 0.13717612502616766
+      },
+      "paired_test": {
+        "n_queries": 1000,
+        "mean_difference": 0.1337624803887237,
+        "median_difference": 0.12938072905716289,
+        "wilcoxon_statistic": 499926.0,
+        "wilcoxon_p": 9.30020669113668e-165
+      }
+    },
+    {
+      "noise_level": 0.3,
+      "nearest_neighbor": {
+        "mean": 0.10048836420146415,
+        "ci95_low": 0.09825856632799448,
+        "ci95_high": 0.10266469807995635
+      },
+      "uniform_random": {
+        "mean": 0.21332301253679986,
+        "ci95_low": 0.21009754583027387,
+        "ci95_high": 0.21665479346657682
+      },
+      "random_minus_nearest": {
+        "mean": 0.11283464833533574,
+        "ci95_low": 0.10936234959014057,
+        "ci95_high": 0.11620317031965828
+      },
+      "paired_test": {
+        "n_queries": 1000,
+        "mean_difference": 0.11283464833533574,
+        "median_difference": 0.113199534315231,
+        "wilcoxon_statistic": 499870.0,
+        "wilcoxon_p": 1.099864900920272e-164
+      }
+    }
+  ],
+  "distance_relationships": {
+    "nearest_neighbor_explanation": {
+      "pearson_r": 0.6935308999646068,
+      "pearson_p": 0.0,
+      "spearman_rho": 0.7565605031482888,
+      "spearman_p": 0.0
+    },
+    "uniform_random_explanation": {
+      "pearson_r": 0.0441378375618115,
+      "pearson_p": 1.4425850715736623e-16,
+      "spearman_rho": 0.024246465021747272,
+      "spearman_p": 5.716754447503581e-06
+    }
+  }
+}
