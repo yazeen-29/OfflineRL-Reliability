@@ -1,0 +1,49 @@
+{
+  "analysis_source": "results/analysis/multiseed/iql_100k_multiseed_gaussian_analysis_v2.json",
+  "raw_seed_sources": {
+    "0": "results/shifts/iql_100k_gaussian_observation_noise.json",
+    "1": "results/shifts/multiseed/iql_seed1_gaussian_observation_noise.json",
+    "2": "results/shifts/multiseed/iql_seed2_gaussian_observation_noise.json",
+    "3": "results/shifts/multiseed/iql_seed3_gaussian_observation_noise.json",
+    "4": "results/shifts/multiseed/iql_seed4_gaussian_observation_noise.json"
+  },
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "queries_per_seed": 1000,
+  "repeats_per_query_level": 5,
+  "records_per_seed": 35000,
+  "noise_levels": [
+    0.0,
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "figure_files": [
+    "figure1_cross_seed_ood_vs_explanation.png",
+    "figure1_cross_seed_ood_vs_explanation.pdf",
+    "figure2_cross_seed_slopes.png",
+    "figure2_cross_seed_slopes.pdf",
+    "figure3_cross_seed_dose_response.png",
+    "figure3_cross_seed_dose_response.pdf"
+  ],
+  "cross_seed_statistics": {
+    "mean_slope": 0.1342720710133038,
+    "slope_ci95_low": 0.12235670203603462,
+    "slope_ci95_high": 0.146187439990573,
+    "exact_one_sided_sign_flip_p": 0.03125,
+    "exact_two_sided_sign_flip_p": 0.0625
+  },
+  "plotting_convention": {
+    "individual_seed_curves": "shown for replication transparency",
+    "aggregate_uncertainty": "95% t-based CI across the five independent policy seeds",
+    "figure3": "three panels use independent y-axes because the metrics have different numerical scales"
+  }
+}

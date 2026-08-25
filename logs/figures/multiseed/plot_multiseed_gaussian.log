@@ -1,0 +1,23 @@
+================================================================================
+PAPER-QUALITY MULTI-SEED GAUSSIAN FIGURE GENERATION
+================================================================================
+Loading seed 0: results/shifts/iql_100k_gaussian_observation_noise.json
+Loading seed 1: results/shifts/multiseed/iql_seed1_gaussian_observation_noise.json
+Loading seed 2: results/shifts/multiseed/iql_seed2_gaussian_observation_noise.json
+Loading seed 3: results/shifts/multiseed/iql_seed3_gaussian_observation_noise.json
+Loading seed 4: results/shifts/multiseed/iql_seed4_gaussian_observation_noise.json
+
+================================================================================
+FINAL PAPER-QUALITY MULTI-SEED FIGURES GENERATED
+================================================================================
+Output: paper/figures/multiseed
+Mean slope: 0.1342720710133038
+95% CI: (0.12235670203603462, 0.146187439990573)
+Exact one-sided sign-flip p: 0.03125
+Exact two-sided sign-flip p: 0.0625
+
+Generated:
+  Figure 1: cross-seed relationship
+  Figure 2: policy-seed replication
+  Figure 3: three-panel dose response
+================================================================================
