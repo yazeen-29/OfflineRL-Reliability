@@ -1,0 +1,400 @@
+{
+  "experiment": "IQL-100K-cross-seed-gaussian-shift",
+  "task": "mujoco/hopper/medium-v0",
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "independent_replication_unit": "trained IQL policy seed",
+  "queries_per_seed": 1000,
+  "noise_repeats_per_query_level": 5,
+  "noise_levels": [
+    0.0,
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "statistical_note": "Cross-seed inference is performed over the five independently trained policy seeds. Query-level observations are used to estimate each seed-level effect and are not treated as independent policy replications.",
+  "per_seed": {
+    "0": {
+      "seed": 0,
+      "num_queries": 1000,
+      "num_levels": 7,
+      "num_repeats": 5,
+      "positive_slope_fraction": 0.998,
+      "query_slope": {
+        "n": 1000,
+        "mean": 0.13137247605337465,
+        "std": 0.05266836613560892,
+        "ci95_low": 0.12810415714957038,
+        "ci95_high": 0.13464079495717893
+      },
+      "clean_nn_distance": 0.13372289653488845,
+      "clean_explanation_disagreement": 0.02058644416514941,
+      "noise_level_means": {
+        "0.0": {
+          "nn_distance": 0.13372289653488845,
+          "explanation_disagreement": 0.02058644416514941
+        },
+        "0.01": {
+          "nn_distance": 0.13630277140573102,
+          "explanation_disagreement": 0.02073418896573402
+        },
+        "0.025": {
+          "nn_distance": 0.14852154080726512,
+          "explanation_disagreement": 0.022436343189278448
+        },
+        "0.05": {
+          "nn_distance": 0.18200620584705277,
+          "explanation_disagreement": 0.027707519625083037
+        },
+        "0.1": {
+          "nn_distance": 0.2781225203166025,
+          "explanation_disagreement": 0.04128276392791555
+        },
+        "0.2": {
+          "nn_distance": 0.5052479456392923,
+          "explanation_disagreement": 0.07107074015263547
+        },
+        "0.3": {
+          "nn_distance": 0.7524970012321517,
+          "explanation_disagreement": 0.10048836420146415
+        }
+      }
+    },
+    "1": {
+      "seed": 1,
+      "num_queries": 1000,
+      "num_levels": 7,
+      "num_repeats": 5,
+      "positive_slope_fraction": 0.997,
+      "query_slope": {
+        "n": 1000,
+        "mean": 0.1366127284423408,
+        "std": 0.048774744962850516,
+        "ci95_low": 0.1335860269764197,
+        "ci95_high": 0.1396394299082619
+      },
+      "clean_nn_distance": 0.1321893468299732,
+      "clean_explanation_disagreement": 0.020962743167555906,
+      "noise_level_means": {
+        "0.0": {
+          "nn_distance": 0.1321893468299732,
+          "explanation_disagreement": 0.020962743167555906
+        },
+        "0.01": {
+          "nn_distance": 0.1347458011730627,
+          "explanation_disagreement": 0.02135796360199359
+        },
+        "0.025": {
+          "nn_distance": 0.1475793128484681,
+          "explanation_disagreement": 0.02344475794472745
+        },
+        "0.05": {
+          "nn_distance": 0.18252707825154194,
+          "explanation_disagreement": 0.028844621343492492
+        },
+        "0.1": {
+          "nn_distance": 0.2776306829101211,
+          "explanation_disagreement": 0.04327325155615062
+        },
+        "0.2": {
+          "nn_distance": 0.5033068004136223,
+          "explanation_disagreement": 0.07478956251372813
+        },
+        "0.3": {
+          "nn_distance": 0.7410004136253765,
+          "explanation_disagreement": 0.10320035843059058
+        }
+      }
+    },
+    "2": {
+      "seed": 2,
+      "num_queries": 1000,
+      "num_levels": 7,
+      "num_repeats": 5,
+      "positive_slope_fraction": 0.998,
+      "query_slope": {
+        "n": 1000,
+        "mean": 0.14931119277832494,
+        "std": 0.059060195072703416,
+        "ci95_low": 0.1456462309391541,
+        "ci95_high": 0.15297615461749578
+      },
+      "clean_nn_distance": 0.13725808956226337,
+      "clean_explanation_disagreement": 0.024481355858399882,
+      "noise_level_means": {
+        "0.0": {
+          "nn_distance": 0.13725808956226337,
+          "explanation_disagreement": 0.024481355858399882
+        },
+        "0.01": {
+          "nn_distance": 0.1399024601691563,
+          "explanation_disagreement": 0.02491617232571529
+        },
+        "0.025": {
+          "nn_distance": 0.1521070913666074,
+          "explanation_disagreement": 0.027043338958533815
+        },
+        "0.05": {
+          "nn_distance": 0.1856530440759471,
+          "explanation_disagreement": 0.0325193469109864
+        },
+        "0.1": {
+          "nn_distance": 0.2806238638748771,
+          "explanation_disagreement": 0.04868345420146377
+        },
+        "0.2": {
+          "nn_distance": 0.5069402539164359,
+          "explanation_disagreement": 0.08124014531937107
+        },
+        "0.3": {
+          "nn_distance": 0.7472374516190706,
+          "explanation_disagreement": 0.11428348539564928
+        }
+      }
+    },
+    "3": {
+      "seed": 3,
+      "num_queries": 1000,
+      "num_levels": 7,
+      "num_repeats": 5,
+      "positive_slope_fraction": 0.995,
+      "query_slope": {
+        "n": 1000,
+        "mean": 0.13045658251905629,
+        "std": 0.04537483407032104,
+        "ci95_low": 0.1276408614547807,
+        "ci95_high": 0.13327230358333186
+      },
+      "clean_nn_distance": 0.13978267619424037,
+      "clean_explanation_disagreement": 0.02166697045277068,
+      "noise_level_means": {
+        "0.0": {
+          "nn_distance": 0.13978267619424037,
+          "explanation_disagreement": 0.02166697045277068
+        },
+        "0.01": {
+          "nn_distance": 0.14237749246162765,
+          "explanation_disagreement": 0.021952951924274024
+        },
+        "0.025": {
+          "nn_distance": 0.15341833183244444,
+          "explanation_disagreement": 0.023608469406589918
+        },
+        "0.05": {
+          "nn_distance": 0.1886038137144348,
+          "explanation_disagreement": 0.02901137698854329
+        },
+        "0.1": {
+          "nn_distance": 0.280075085178937,
+          "explanation_disagreement": 0.04268018471096941
+        },
+        "0.2": {
+          "nn_distance": 0.5062876045452834,
+          "explanation_disagreement": 0.07137578704229844
+        },
+        "0.3": {
+          "nn_distance": 0.7444064922644416,
+          "explanation_disagreement": 0.09948632757736298
+        }
+      }
+    },
+    "4": {
+      "seed": 4,
+      "num_queries": 1000,
+      "num_levels": 7,
+      "num_repeats": 5,
+      "positive_slope_fraction": 0.997,
+      "query_slope": {
+        "n": 1000,
+        "mean": 0.12360737527342232,
+        "std": 0.042683832681150335,
+        "ci95_low": 0.12095864345441297,
+        "ci95_high": 0.12625610709243168
+      },
+      "clean_nn_distance": 0.13676494464245087,
+      "clean_explanation_disagreement": 0.021327134896225657,
+      "noise_level_means": {
+        "0.0": {
+          "nn_distance": 0.13676494464245087,
+          "explanation_disagreement": 0.021327134896225657
+        },
+        "0.01": {
+          "nn_distance": 0.13917840225751935,
+          "explanation_disagreement": 0.021509110799293473
+        },
+        "0.025": {
+          "nn_distance": 0.15143857194893792,
+          "explanation_disagreement": 0.023260438879016472
+        },
+        "0.05": {
+          "nn_distance": 0.1855521388671849,
+          "explanation_disagreement": 0.028380820356148043
+        },
+        "0.1": {
+          "nn_distance": 0.2791343824086097,
+          "explanation_disagreement": 0.04099296472347489
+        },
+        "0.2": {
+          "nn_distance": 0.5077432111469091,
+          "explanation_disagreement": 0.06971792448535351
+        },
+        "0.3": {
+          "nn_distance": 0.7398684607932801,
+          "explanation_disagreement": 0.09452039254920586
+        }
+      }
+    }
+  },
+  "cross_seed": {
+    "mean_query_slope": {
+      "n": 5,
+      "mean": 0.1342720710133038,
+      "std": 0.00959629094062996,
+      "ci95_low": 0.12235670203603462,
+      "ci95_high": 0.146187439990573
+    },
+    "positive_slope_fraction": {
+      "n": 5,
+      "mean": 0.9970000000000001,
+      "std": 0.00122474487139159,
+      "ci95_low": 0.9954792783862084,
+      "ci95_high": 0.9985207216137918
+    },
+    "seed_level_slope_values": [
+      0.13137247605337465,
+      0.1366127284423408,
+      0.14931119277832494,
+      0.13045658251905629,
+      0.12360737527342232
+    ],
+    "seed_level_positive_fraction_values": [
+      0.998,
+      0.997,
+      0.998,
+      0.995,
+      0.997
+    ],
+    "noise_level_results": {
+      "0.0": {
+        "nn_distance": {
+          "n": 5,
+          "mean": 0.13594359075276324,
+          "std": 0.00300694764671554,
+          "ci95_low": 0.132209972115353,
+          "ci95_high": 0.13967720939017347
+        },
+        "explanation_disagreement": {
+          "n": 5,
+          "mean": 0.021804929708020306,
+          "std": 0.001549561451173148,
+          "ci95_low": 0.019880895041094224,
+          "ci95_high": 0.023728964374946388
+        }
+      },
+      "0.01": {
+        "nn_distance": {
+          "n": 5,
+          "mean": 0.1385013854934194,
+          "std": 0.003015952779336368,
+          "ci95_low": 0.13475658550703484,
+          "ci95_high": 0.14224618547980394
+        },
+        "explanation_disagreement": {
+          "n": 5,
+          "mean": 0.022094077523402082,
+          "std": 0.0016368782919672688,
+          "ci95_low": 0.020061624678825052,
+          "ci95_high": 0.024126530367979113
+        }
+      },
+      "0.025": {
+        "nn_distance": {
+          "n": 5,
+          "mean": 0.15061296976074462,
+          "std": 0.002467854535241237,
+          "ci95_low": 0.14754872363153168,
+          "ci95_high": 0.15367721588995756
+        },
+        "explanation_disagreement": {
+          "n": 5,
+          "mean": 0.023958669675629218,
+          "std": 0.0017823393515877077,
+          "ci95_low": 0.021745603070180915,
+          "ci95_high": 0.02617173628107752
+        }
+      },
+      "0.05": {
+        "nn_distance": {
+          "n": 5,
+          "mean": 0.18486845615123232,
+          "std": 0.002679105432117642,
+          "ci95_low": 0.1815419073887797,
+          "ci95_high": 0.18819500491368493
+        },
+        "explanation_disagreement": {
+          "n": 5,
+          "mean": 0.029292737044850654,
+          "std": 0.0018731983815390846,
+          "ci95_low": 0.02696685405300001,
+          "ci95_high": 0.031618620036701295
+        }
+      },
+      "0.1": {
+        "nn_distance": {
+          "n": 5,
+          "mean": 0.2791173069378295,
+          "std": 0.001263625335783876,
+          "ci95_low": 0.2775483088511685,
+          "ci95_high": 0.2806863050244905
+        },
+        "explanation_disagreement": {
+          "n": 5,
+          "mean": 0.043382523823994844,
+          "std": 0.0031114332646321806,
+          "ci95_low": 0.039519169156487455,
+          "ci95_high": 0.04724587849150223
+        }
+      },
+      "0.2": {
+        "nn_distance": {
+          "n": 5,
+          "mean": 0.5059051631323086,
+          "std": 0.0017160651590707383,
+          "ci95_low": 0.5037743868057186,
+          "ci95_high": 0.5080359394588986
+        },
+        "explanation_disagreement": {
+          "n": 5,
+          "mean": 0.07363883190267732,
+          "std": 0.0046420396608054465,
+          "ci95_low": 0.06787497837762117,
+          "ci95_high": 0.07940268542773347
+        }
+      },
+      "0.3": {
+        "nn_distance": {
+          "n": 5,
+          "mean": 0.745001963906864,
+          "std": 0.005096391742406102,
+          "ci95_low": 0.7386739577595755,
+          "ci95_high": 0.7513299700541526
+        },
+        "explanation_disagreement": {
+          "n": 5,
+          "mean": 0.10239578563085457,
+          "std": 0.007349995951576786,
+          "ci95_low": 0.09326956027083824,
+          "ci95_high": 0.11152201099087089
+        }
+      }
+    }
+  }
+}

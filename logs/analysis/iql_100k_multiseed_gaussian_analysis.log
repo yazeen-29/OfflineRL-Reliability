@@ -1,0 +1,36 @@
+================================================================================
+CROSS-SEED IQL GAUSSIAN SHIFT ANALYSIS
+================================================================================
+
+Seed 0
+  Positive slope fraction: 0.998
+  Mean query slope: 0.13137247605337465
+  CI95: (np.float64(0.12810415714957038), np.float64(0.13464079495717893))
+
+Seed 1
+  Positive slope fraction: 0.997
+  Mean query slope: 0.1366127284423408
+  CI95: (np.float64(0.1335860269764197), np.float64(0.1396394299082619))
+
+Seed 2
+  Positive slope fraction: 0.998
+  Mean query slope: 0.14931119277832494
+  CI95: (np.float64(0.1456462309391541), np.float64(0.15297615461749578))
+
+Seed 3
+  Positive slope fraction: 0.995
+  Mean query slope: 0.13045658251905629
+  CI95: (np.float64(0.1276408614547807), np.float64(0.13327230358333186))
+
+Seed 4
+  Positive slope fraction: 0.997
+  Mean query slope: 0.12360737527342232
+  CI95: (np.float64(0.12095864345441297), np.float64(0.12625610709243168))
+
+================================================================================
+CROSS-SEED PRIMARY RESULT
+================================================================================
+Mean policy-seed slope: {'n': 5, 'mean': 0.1342720710133038, 'std': 0.00959629094062996, 'ci95_low': np.float64(0.12235670203603462), 'ci95_high': np.float64(0.146187439990573)}
+Mean positive-slope fraction: {'n': 5, 'mean': 0.9970000000000001, 'std': 0.00122474487139159, 'ci95_low': np.float64(0.9954792783862084), 'ci95_high': np.float64(0.9985207216137918)}
+
+Saved: results/analysis/multiseed/iql_100k_multiseed_gaussian_analysis.json
