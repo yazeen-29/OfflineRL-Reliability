@@ -1,9 +1,56 @@
-checkpoints/
-results/*.csv
-results/*.json
-datasets/
+# ============================================================
+# Python
+# ============================================================
 __pycache__/
 *.pyc
-.ipynb_checkpoints/
-d3rlpy_logs/
+*.pyo
 *.egg-info/
+.ipynb_checkpoints/
+
+# ============================================================
+# Virtual environments
+# ============================================================
+.venv/
+venv/
+env/
+
+# ============================================================
+# Model checkpoints / training artifacts
+# ============================================================
+checkpoints/
+d3rlpy_logs/
+
+# ============================================================
+# Generated experiment results
+# Existing tracked files remain tracked.
+# ============================================================
+results/**/*.json
+results/**/*.csv
+
+# ============================================================
+# Generated logs
+# Existing tracked logs remain tracked.
+# ============================================================
+logs/
+
+# ============================================================
+# Local archives / downloaded bundles
+# ============================================================
+*.tar.gz
+*.zip
+
+# ============================================================
+# Work-in-progress paper artifacts
+# Final paper files can be force-added later when ready.
+# ============================================================
+paper/manuscript/
+paper/tables/
+paper/figures/cross_environment/
+
+# ============================================================
+# OS/editor noise
+# ============================================================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
