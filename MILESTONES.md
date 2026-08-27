@@ -115,3 +115,87 @@ Nearest-other-state distance:
 
 Status:
 EXPLANATION BASELINE COMPLETE
+
+# FINAL RESEARCH STATUS — 2026-08-27
+
+## M7 — Five-seed IQL Gaussian replication
+Status: COMPLETE
+
+### Hopper
+- 5 independently trained IQL policy seeds
+- 1,000 queries per seed
+- 35,000 records per seed
+- 175,000 records total
+- Mean seed-level slope: 0.1342720710
+- 95% CI: [0.1223567020, 0.1461874400]
+- Positive query-level slope fraction: 0.9970
+- Exact one-sided sign-flip p: 0.03125
+- Exact two-sided sign-flip p: 0.0625
+
+### HalfCheetah
+- 5 independently trained IQL policy seeds
+- 1,000 queries per seed
+- 35,000 records per seed
+- 175,000 records total
+- Mean seed-level slope: 0.0651419255
+- 95% CI: [0.0584082882, 0.0718755627]
+- Positive query-level slope fraction: 0.9252
+- Exact one-sided sign-flip p: 0.03125
+- Exact two-sided sign-flip p: 0.0625
+
+## M8 — Cross-environment replication
+Status: COMPLETE
+
+- Hopper and HalfCheetah analyzed using the same five-seed replication structure.
+- All 10 policy-seed slopes were positive.
+- Cross-environment synthesis validated against both source analyses.
+- Raw slope magnitudes are treated as descriptive rather than standardized cross-environment effect sizes.
+
+## M9 — Structured directional robustness
+Status: COMPLETE
+
+- Environment: mujoco/hopper/medium-v0
+- Policy seeds: 0, 1, 2, 3, 4
+- Queries per seed: 1,000
+- Records per seed: 7,000
+- Gaussian-equivalent displacement levels:
+  0.0, 0.01, 0.025, 0.05, 0.10, 0.20, 0.30
+- Mean explanation dose-response slope: 0.2699650813
+- 95% CI: [0.2325682855, 0.3073618770]
+- Exact one-sided sign-flip p: 0.03125
+- Exact two-sided sign-flip p: 0.0625
+- Mean nearest-neighbor distance slope: 2.0280882524
+- Mean policy-action-change slope: 0.4316813072
+
+## M10 — Random-reference control
+Status: COMPLETE
+
+- Environment: mujoco/hopper/medium-v0
+- Policy seeds: 0, 1, 2, 3, 4
+- Queries per seed: 1,000
+- Records per seed: 35,000
+- Nearest-reference mean slope: 0.2768094429
+- Uniform-random-reference mean slope: 0.0370033350
+- Nearest-minus-random mean difference: 0.2398061079
+- 95% CI: [0.2164962713, 0.2631159445]
+- Exact one-sided sign-flip p: 0.03125
+- Exact two-sided sign-flip p: 0.0625
+
+## M11 — Final analysis and audit
+Status: COMPLETE
+
+- Cross-environment Gaussian synthesis validated.
+- Five-seed HalfCheetah raw data validated.
+- Hopper analysis re-audited against the existing result.
+- Random-reference v2 validated as the canonical control analysis.
+- Publication figures 4–6 validated.
+- Master experiment audit passed.
+
+## M12 — Final paper evidence package
+Status: COMPLETE
+
+- Cross-environment Gaussian results table generated.
+- Structured robustness table generated.
+- Master evidence summary generated.
+- Publication figures generated in PDF/PNG/SVG.
+- Experimental results frozen for manuscript preparation.
