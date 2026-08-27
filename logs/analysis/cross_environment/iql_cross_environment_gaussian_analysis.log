@@ -1,0 +1,25 @@
+================================================================================
+CROSS-ENVIRONMENT GAUSSIAN SYNTHESIS
+================================================================================
+
+Hopper
+  Mean slope: 0.1342720710133038
+  95% CI: (0.12235670203603462, 0.146187439990573)
+  Positive-slope fraction: 0.9970000000000001
+  One-sided p: 0.03125
+  Two-sided p: 0.0625
+
+HalfCheetah
+  Mean slope: 0.06514192545060538
+  95% CI: (0.05840828819880812, 0.07187556270240263)
+  Positive-slope fraction: 0.9251999999999999
+  One-sided p: 0.03125
+  Two-sided p: 0.0625
+
+All 10 policy-seed slopes positive: True
+Combined positive-seed fraction: 1.0000
+
+Saved: results/analysis/cross_environment/iql_cross_environment_gaussian_analysis.json
+================================================================================
+✅ CROSS-ENVIRONMENT ANALYSIS COMPLETE
+================================================================================

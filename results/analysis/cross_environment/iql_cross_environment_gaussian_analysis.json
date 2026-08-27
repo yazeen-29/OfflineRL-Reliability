@@ -1,0 +1,131 @@
+{
+  "analysis": "Cross-environment synthesis of Gaussian observation-shift explanation reliability",
+  "environments": [
+    "Hopper",
+    "HalfCheetah"
+  ],
+  "primary_question": "Does the positive relationship between nearest-neighbor distributional distance and explanation-action disagreement replicate across offline RL environments?",
+  "independent_replication_unit": "independently trained IQL policy seed",
+  "environment_summaries": {
+    "Hopper": {
+      "environment": "Hopper",
+      "task": "mujoco/hopper/medium-v0",
+      "policy_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "records_per_seed": 35000,
+      "queries_per_seed": 1000,
+      "repeats_per_query_level": 5,
+      "noise_levels": [
+        0.0,
+        0.01,
+        0.025,
+        0.05,
+        0.1,
+        0.2,
+        0.3
+      ],
+      "seed_level_slopes": [
+        0.13137247605337465,
+        0.1366127284423408,
+        0.14931119277832494,
+        0.13045658251905629,
+        0.12360737527342232
+      ],
+      "mean_slope": 0.1342720710133038,
+      "slope_sd": 0.00959629094062996,
+      "slope_ci95": {
+        "low": 0.12235670203603462,
+        "high": 0.146187439990573
+      },
+      "seed_positive_slope_fractions": [
+        0.998,
+        0.997,
+        0.998,
+        0.995,
+        0.997
+      ],
+      "mean_positive_slope_fraction": 0.9970000000000001,
+      "positive_slope_fraction_ci95": {
+        "low": 0.9954792783862084,
+        "high": 0.9985207216137918
+      },
+      "exact_sign_flip_test": {
+        "n_seeds": 5,
+        "observed_mean": 0.1342720710133038,
+        "one_sided_p": 0.03125,
+        "two_sided_p": 0.0625,
+        "num_exact_sign_assignments": 32
+      },
+      "all_seed_slopes_positive": true
+    },
+    "HalfCheetah": {
+      "environment": "HalfCheetah",
+      "task": "mujoco/halfcheetah/medium-v0",
+      "policy_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "records_per_seed": 35000,
+      "queries_per_seed": 1000,
+      "repeats_per_query_level": 5,
+      "noise_levels": [
+        0.0,
+        0.01,
+        0.025,
+        0.05,
+        0.1,
+        0.2,
+        0.3
+      ],
+      "seed_level_slopes": [
+        0.06284319325246998,
+        0.06577370242558395,
+        0.06264000059247606,
+        0.06026194668398293,
+        0.07419078429851395
+      ],
+      "mean_slope": 0.06514192545060538,
+      "slope_sd": 0.005423075213212564,
+      "slope_ci95": {
+        "low": 0.05840828819880812,
+        "high": 0.07187556270240263
+      },
+      "seed_positive_slope_fractions": [
+        0.928,
+        0.917,
+        0.921,
+        0.925,
+        0.935
+      ],
+      "mean_positive_slope_fraction": 0.9251999999999999,
+      "positive_slope_fraction_ci95": {
+        "low": 0.9166694881944076,
+        "high": 0.9337305118055922
+      },
+      "exact_sign_flip_test": {
+        "n_seeds": 5,
+        "observed_mean": 0.06514192545060538,
+        "one_sided_p": 0.03125,
+        "two_sided_p": 0.0625,
+        "num_exact_sign_assignments": 32
+      },
+      "all_seed_slopes_positive": true
+    }
+  },
+  "replication_summary": {
+    "total_policy_seeds": 10,
+    "positive_seed_slopes": 10,
+    "positive_seed_slope_fraction": 1.0,
+    "all_policy_seed_slopes_positive": true
+  },
+  "interpretation_guardrail": "Raw slope magnitudes are reported descriptively. They are not treated as directly standardized cross-environment effect sizes. The primary cross-environment conclusion concerns replication of the positive relationship and consistency across independently trained policy seeds.",
+  "statistical_unit_note": "Within each environment, policy seeds are the independent replication units for cross-seed inference. Query-level observations estimate the seed-level effect and are not treated as independent policy replications."
+}
