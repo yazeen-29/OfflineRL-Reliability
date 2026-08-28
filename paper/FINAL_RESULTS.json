@@ -1,0 +1,72 @@
+{
+  "project": "Offline RL Reliability",
+  "registry_status": "in_progress",
+  "canonical_policy": "Only results explicitly marked frozen are manuscript-eligible.",
+  "primary_gaussian": {
+    "hopper": {
+      "status": "frozen",
+      "mean_slope": 0.134272071,
+      "ci95": [
+        0.122356702,
+        0.14618744
+      ],
+      "positive_query_slope_fraction": 0.997,
+      "one_sided_exact_p": 0.03125,
+      "two_sided_exact_p": 0.0625
+    },
+    "halfcheetah": {
+      "status": "frozen",
+      "mean_slope": 0.0651419255,
+      "ci95": [
+        0.0584082882,
+        0.0718755627
+      ],
+      "positive_query_slope_fraction": 0.9252,
+      "one_sided_exact_p": 0.03125,
+      "two_sided_exact_p": 0.0625
+    },
+    "status": "frozen"
+  },
+  "cross_environment": {
+    "status": "frozen",
+    "positive_seed_slopes": "10/10"
+  },
+  "structured_directional": {
+    "status": "frozen",
+    "mean_explanation_slope": 0.2699650813,
+    "ci95": [
+      0.2325682855,
+      0.307361877
+    ],
+    "one_sided_exact_p": 0.03125,
+    "two_sided_exact_p": 0.0625
+  },
+  "random_reference_control": {
+    "status": "frozen",
+    "nearest_mean_slope": 0.2768094429,
+    "random_mean_slope": 0.037003335,
+    "nearest_minus_random": 0.2398061079,
+    "ci95": [
+      0.2164962713,
+      0.2631159445
+    ],
+    "positive_seed_differences": "5/5",
+    "one_sided_exact_p": 0.03125,
+    "two_sided_exact_p": 0.0625
+  },
+  "distance_matched_control": {
+    "status": "pending_final_validation"
+  },
+  "decision_consequence": {
+    "status": "not_yet_run"
+  },
+  "reliability_score": {
+    "status": "not_yet_run"
+  },
+  "cql": {
+    "status": "not_yet_run"
+  },
+  "walker2d": {
+    "status": "not_yet_run"
+  }
+}
