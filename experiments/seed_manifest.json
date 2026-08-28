@@ -4,8 +4,14 @@
   "algorithm": "iql",
   "training_steps": 100000,
   "device": "cuda:0",
-  "seeds": [0, 1, 2, 3, 4],
-  "reference_fraction": 0.90,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "reference_fraction": 0.9,
   "num_queries": 1000,
   "noise_repeats": 5,
   "noise_levels": [
@@ -13,15 +19,52 @@
     0.01,
     0.025,
     0.05,
-    0.10,
-    0.20,
-    0.30
+    0.1,
+    0.2,
+    0.3
   ],
   "status": {
-    "seed_0": "complete",
-    "seed_1": "pending",
-    "seed_2": "pending",
-    "seed_3": "pending",
-    "seed_4": "pending"
+    "seed_0": "verified_existing",
+    "seed_1": "verified_existing",
+    "seed_2": "verified_existing",
+    "seed_3": "verified_existing",
+    "seed_4": "verified_existing",
+    "seed_5": "not_started",
+    "seed_6": "not_started",
+    "seed_7": "not_started",
+    "seed_8": "not_started",
+    "seed_9": "not_started"
+  },
+  "p1_predictive_study": {
+    "target_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "existing_verified_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "new_training_seeds": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "training_spec": "experiments/reliability/P1_IQL_TRAINING_SPEC_V1.json",
+    "smoke_test_seeds": [
+      999
+    ]
   }
 }

@@ -1,0 +1,52 @@
+{
+  "specification": "P1_IQL_TRAINING_SPEC_V1",
+  "status": "frozen_before_additional_training",
+  "algorithm": "iql",
+  "task": "mujoco/hopper/medium-v0",
+  "training_steps": 100000,
+  "batch_size": 256,
+  "gamma": 0.99,
+  "actor_learning_rate": 0.0003,
+  "critic_learning_rate": 0.0003,
+  "tau": 0.005,
+  "n_critics": 2,
+  "expectile": 0.7,
+  "weight_temp": 3.0,
+  "max_weight": 100.0,
+  "observation_scaler": "standard",
+  "action_scaler": "min_max",
+  "reward_scaler": "none",
+  "compile_graph": false,
+  "actor_encoder": {
+    "type": "default",
+    "activation": "relu",
+    "use_batch_norm": false,
+    "dropout_rate": null
+  },
+  "critic_encoder": {
+    "type": "default",
+    "activation": "relu",
+    "use_batch_norm": false,
+    "dropout_rate": null
+  },
+  "value_encoder": {
+    "type": "default",
+    "activation": "relu",
+    "use_batch_norm": false,
+    "dropout_rate": null
+  },
+  "optimizer": {
+    "type": "adam",
+    "betas": [0.9, 0.999],
+    "eps": 1e-8,
+    "weight_decay": 0,
+    "amsgrad": false,
+    "clip_grad_norm": null
+  },
+  "existing_verified_policy_seeds": [0, 1, 2, 3, 4],
+  "new_policy_seeds": [5, 6, 7, 8, 9],
+  "primary_policy_seed_target": 10,
+  "additional_seed_minimum": 8,
+  "training_seed_is_experimental_factor": true,
+  "p1_outcomes_are_excluded_from_training_selection": true
+}

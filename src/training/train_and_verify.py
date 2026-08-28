@@ -5,6 +5,7 @@ import platform
 import subprocess
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -45,6 +46,63 @@ def get_git_commit():
         ).strip()
     except Exception:
         return "UNKNOWN"
+
+
+def sha256_file(path):
+    """Return SHA-256 digest for a file."""
+    import hashlib
+
+    digest = hashlib.sha256()
+
+    with open(path, "rb") as f:
+        for chunk in iter(
+            lambda: f.read(1024 * 1024),
+            b"",
+        ):
+            digest.update(chunk)
+
+    return digest.hexdigest()
+
+
+def get_training_provenance():
+    """Return source/specification hashes for this training run."""
+    repo_root = Path(
+        os.path.abspath(
+            os.path.join(
+                os.path.dirname(__file__),
+                "..",
+                "..",
+            )
+        )
+    )
+
+    provenance = {}
+
+    spec = (
+        repo_root
+        / "experiments"
+        / "reliability"
+        / "P1_IQL_TRAINING_SPEC_V1.json"
+    )
+
+    if spec.exists():
+        provenance[
+            "training_spec_sha256"
+        ] = sha256_file(spec)
+
+    for relative in [
+        "src/training/train_and_verify.py",
+        "src/training/run_replications.py",
+        "src/utils/policy_io.py",
+    ]:
+        path = repo_root / relative
+
+        if path.exists():
+            provenance[
+                f"{relative}_sha256"
+            ] = sha256_file(path)
+
+    return provenance
 
 
 def get_git_status():
@@ -312,6 +370,8 @@ def main():
             "device": args.device,
             "git_commit": get_git_commit(),
             "git_status": get_git_status(),
+            "training_provenance":
+                get_training_provenance(),
         }
     )
 
@@ -584,10 +644,13 @@ def main():
         reward_reloaded
     )
 
-    tolerance = 50.0
+    # For the deterministic verification protocol, the same
+    # evaluation seed is used before and after checkpoint reload.
+    # The expected difference is numerical round-off only.
+    tolerance = 1e-10
 
     consistent = (
-        difference < tolerance
+        difference <= tolerance
     )
 
     # -----------------------------------------------------------------
