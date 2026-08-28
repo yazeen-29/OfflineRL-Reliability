@@ -164,8 +164,18 @@ Eligible states:
 
 Terminal and invalid states are excluded from the primary analysis.
 
-Sampling is uniform over the eligible decision-state pool unless a later
-protocol amendment explicitly states otherwise.
+Pilot sampling rule:
+    Generate 20 clean evaluation episodes and collect eligible decision
+    states from each episode. Randomly sample 5 eligible decision states
+    without replacement from each episode, giving exactly 100 pilot
+    decision states.
+
+The pilot state-sampling seed is fixed before analysis.
+
+Final P1 sampling:
+    The publication-scale experiment will preserve episode-level
+    separation and will use a pre-specified sampling rule recorded with
+    the final dataset.
 
 ---
 
@@ -254,6 +264,32 @@ and must not be selected by maximizing AUROC, AUPRC, calibration, or
 another post-hoc performance metric.
 
 ---
+
+## 11A. Secondary Counterfactual Consequence Magnitude
+
+In addition to the primary signed downstream return degradation
+
+    Delta_J(H) = J_clean(H) - J_shifted(H)
+
+the study records the absolute counterfactual consequence magnitude:
+
+    C(H) = |Delta_J(H)|
+
+A normalized secondary quantity is also recorded:
+
+    C_rel(H) =
+        |Delta_J(H)| /
+        (epsilon + 0.5 *
+        (|J_clean(H)| + |J_shifted(H)|))
+
+where epsilon is a fixed numerical stabilizer set to 1e-8.
+
+These quantities are secondary outcomes and do not replace the
+prespecified primary signed degradation outcome.
+
+They are included because an observation perturbation can either
+improve or worsen the local policy outcome; absolute consequence
+magnitude measures behavioral sensitivity independently of direction.
 
 ## 12. Primary predictors
 
