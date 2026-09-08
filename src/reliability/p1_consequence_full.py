@@ -1,4 +1,4 @@
-"""Full P1 decision-consequence collector and engineering gate."""
+"""P1 decision-consequence collector for Kaggle and local validation."""
 from __future__ import annotations
 
 import argparse
@@ -10,7 +10,10 @@ import d3rlpy
 import gymnasium as gym
 import numpy as np
 
-from src.reliability.counterfactual import capture_state, get_observation, restore_state, run_counterfactual_pair, validate_state_pair
+from src.reliability.counterfactual import (
+    capture_state, get_observation, restore_state,
+    run_counterfactual_pair, validate_state_pair,
+)
 from src.reliability.critic_disagreement import twin_critic_disagreement, twin_critic_values
 from src.reliability.support_distance import build_reference_index, fit_reference_standardization, nearest_support_distance
 
@@ -26,37 +29,37 @@ CHECKPOINTS = {
 SIGMA_LEVELS = [0.0, 0.01, 0.025, 0.05, 0.10, 0.20, 0.30]
 HORIZONS = [1, 5, 10, 20]
 REFERENCE_FRACTION = 0.90
-N_EPISODES = 4
-STATES_PER_EPISODE = 5
 STATE_SAMPLING_SEED = 20260828
 NOISE_SEED = 20260829
 OUTPUT_DIR = Path("results/reliability/P1_decision_consequence/raw")
 PROTOCOL = "experiments/reliability/P1_DECISION_CONSEQUENCE_PROTOCOL.md"
 
 
-def _git_commit():
+def current_commit():
     try:
         return subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
     except (OSError, subprocess.CalledProcessError):
         return "unknown"
 
 
-def _reference():
+def load_reference():
     dataset, _ = d3rlpy.datasets.get_minari(TASK)
     episodes = list(dataset.episodes)
     rng = np.random.default_rng(STATE_SAMPLING_SEED)
     indices = np.arange(len(episodes))
     rng.shuffle(indices)
     split = int(len(indices) * REFERENCE_FRACTION)
-    observations = np.concatenate([np.asarray(episodes[int(i)].observations, dtype=np.float64) for i in indices[:split]], axis=0)
+    observations = np.concatenate(
+        [np.asarray(episodes[int(i)].observations, dtype=np.float64) for i in indices[:split]], axis=0
+    )
     mean, std = fit_reference_standardization(observations)
-    return mean, std, build_reference_index((observations - mean) / std)
+    return mean, std, build_reference_index((observations - mean) / std), len(episodes), len(observations)
 
 
-def _states(policy):
+def collect_states(policy, n_episodes, states_per_episode):
     rng = np.random.default_rng(STATE_SAMPLING_SEED)
     selected = []
-    for episode_id in range(N_EPISODES):
+    for episode_id in range(n_episodes):
         env = gym.make(ENV_NAME)
         eligible = []
         try:
@@ -75,36 +78,40 @@ def _states(policy):
                     break
         finally:
             env.close()
-        if len(eligible) < STATES_PER_EPISODE:
-            raise RuntimeError(f"Episode {episode_id} has too few valid states")
-        selected.extend(eligible[int(i)] for i in rng.choice(len(eligible), STATES_PER_EPISODE, replace=False))
+        if len(eligible) < states_per_episode:
+            raise RuntimeError(f"Episode {episode_id} has only {len(eligible)} valid states")
+        selected.extend(eligible[int(i)] for i in rng.choice(len(eligible), states_per_episode, replace=False))
     return selected
 
 
-def _action_gap(clean, shifted):
-    return float(np.linalg.norm(np.asarray(clean) - np.asarray(shifted)) / np.sqrt(len(clean)))
+def action_gap(clean, shifted):
+    clean = np.asarray(clean, dtype=np.float64)
+    shifted = np.asarray(shifted, dtype=np.float64)
+    return float(np.linalg.norm(clean - shifted) / np.sqrt(len(clean)))
 
 
-def collect_seed(policy_seed, checkpoint):
+def collect_seed(policy_seed, checkpoint, n_episodes, states_per_episode, status):
     if not checkpoint.exists():
         raise FileNotFoundError(checkpoint)
     policy = d3rlpy.load_learnable(str(checkpoint), device="cpu")
-    mean, std, reference_index = _reference()
-    states = _states(policy)
+    mean, std, reference_index, dataset_episodes, reference_observations = load_reference()
+    states = collect_states(policy, n_episodes, states_per_episode)
     noise_rng = np.random.default_rng(NOISE_SEED)
     records = []
+
     for state_id, source in enumerate(states):
-        clean_env = gym.make(ENV_NAME)
+        env = gym.make(ENV_NAME)
         try:
-            clean_env.reset(seed=20000 + state_id)
-            restore_state(clean_env, source["state"])
-            clean_obs = get_observation(clean_env)
+            env.reset(seed=20000 + state_id)
+            restore_state(env, source["state"])
+            clean_obs = get_observation(env)
             clean_action = np.asarray(policy.predict(clean_obs.reshape(1, -1))[0], dtype=np.float64)
             support, nearest = nearest_support_distance(clean_obs, mean, std, reference_index)
             q1, q2 = twin_critic_values(policy, clean_obs, clean_action)
             critic_gap = twin_critic_disagreement(q1, q2)
         finally:
-            clean_env.close()
+            env.close()
+
         standard_normal = noise_rng.normal(size=clean_obs.shape)
         for sigma in SIGMA_LEVELS:
             shifted_obs = clean_obs + standard_normal * sigma * std
@@ -113,22 +120,27 @@ def collect_seed(policy_seed, checkpoint):
                 clean_branch = gym.make(ENV_NAME)
                 shifted_branch = gym.make(ENV_NAME)
                 try:
-                    clean_branch.reset(seed=40000 + state_id)
-                    shifted_branch.reset(seed=30000 + state_id)
+                    clean_branch.reset(seed=40000 + state_id * 100 + horizon)
+                    shifted_branch.reset(seed=30000 + state_id * 100 + horizon)
                     restore_state(clean_branch, source["state"])
                     restore_state(shifted_branch, source["state"])
                     validate_state_pair(clean_branch, shifted_branch)
-                    clean_out, shifted_out = run_counterfactual_pair(clean_branch, shifted_branch, policy, clean_obs, shifted_obs, horizon)
+                    clean_out, shifted_out = run_counterfactual_pair(
+                        env_clean=clean_branch, env_shifted=shifted_branch, policy=policy,
+                        clean_observation=clean_obs, shifted_observation=shifted_obs, horizon=horizon,
+                    )
                     clean_return = float(clean_out.cumulative_return)
                     shifted_return = float(shifted_out.cumulative_return)
                     delta = clean_return - shifted_return
                     records.append({
                         "policy_seed": policy_seed, "state_id": state_id,
                         "source_episode_id": int(source["episode_id"]), "source_step": int(source["step"]),
+                        "checkpoint": str(checkpoint), "git_commit": current_commit(),
+                        "state_sampling_seed": STATE_SAMPLING_SEED, "noise_seed": NOISE_SEED,
                         "sigma": float(sigma), "horizon": horizon,
                         "standardized_noise": (standard_normal * sigma).tolist(),
                         "clean_action": clean_action.tolist(), "shifted_action": shifted_action.tolist(),
-                        "action_disagreement": _action_gap(clean_action, shifted_action),
+                        "action_disagreement": action_gap(clean_action, shifted_action),
                         "support_distance": float(support), "nearest_reference_index": int(nearest),
                         "q1_clean": float(q1), "q2_clean": float(q2),
                         "critic_disagreement": float(critic_gap), "twin_critic_disagreement": float(critic_gap),
@@ -142,11 +154,17 @@ def collect_seed(policy_seed, checkpoint):
                 finally:
                     clean_branch.close()
                     shifted_branch.close()
-    output = {"experiment": "P1_decision_consequence_full", "status": "engineering_gate", "task": TASK, "environment": ENV_NAME,
-              "policy_seed": policy_seed, "checkpoint": str(checkpoint), "sigma_levels": SIGMA_LEVELS, "horizons": HORIZONS,
-              "primary_horizon": 10, "n_episodes": N_EPISODES, "states_per_episode": STATES_PER_EPISODE, "n_states": len(states),
-              "state_sampling_seed": STATE_SAMPLING_SEED, "noise_seed": NOISE_SEED, "reference_fraction": REFERENCE_FRACTION,
-              "protocol": PROTOCOL, "git_commit": _git_commit(), "records": records}
+
+    output = {
+        "experiment": "P1_decision_consequence_full", "status": status,
+        "task": TASK, "environment": ENV_NAME, "algorithm": "IQL",
+        "policy_seed": policy_seed, "checkpoint": str(checkpoint), "git_commit": current_commit(),
+        "sigma_levels": SIGMA_LEVELS, "horizons": HORIZONS, "primary_horizon": 10,
+        "n_episodes": n_episodes, "states_per_episode": states_per_episode, "n_states": len(states),
+        "state_sampling_seed": STATE_SAMPLING_SEED, "noise_seed": NOISE_SEED,
+        "reference_fraction": REFERENCE_FRACTION, "dataset_episodes": dataset_episodes,
+        "reference_observations": reference_observations, "protocol": PROTOCOL, "records": records,
+    }
     output_path = OUTPUT_DIR / f"seed{policy_seed}.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(output, indent=2))
@@ -156,8 +174,11 @@ def collect_seed(policy_seed, checkpoint):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--policy-seed", type=int, choices=sorted(CHECKPOINTS), default=0)
+    parser.add_argument("--n-episodes", type=int, default=4)
+    parser.add_argument("--states-per-episode", type=int, default=5)
+    parser.add_argument("--status", choices=["engineering_gate", "final_collection"], default="engineering_gate")
     args = parser.parse_args()
-    collect_seed(args.policy_seed, CHECKPOINTS[args.policy_seed])
+    collect_seed(args.policy_seed, CHECKPOINTS[args.policy_seed], args.n_episodes, args.states_per_episode, args.status)
 
 
 if __name__ == "__main__":
