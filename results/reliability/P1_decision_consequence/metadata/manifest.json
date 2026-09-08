@@ -1,0 +1,24 @@
+{
+  "experiment": "P1_decision_consequence_full",
+  "task": "mujoco/hopper/medium-v0",
+  "environment": "Hopper-v5",
+  "algorithm": "IQL",
+  "policy_seeds": [0, 1, 2, 3, 4],
+  "checkpoint_paths": {
+    "0": "checkpoints/iql_100k/iql_mujoco_hopper_medium-v0_seed0.d3",
+    "1": "checkpoints/iql_replications/iql_seed1/iql_mujoco_hopper_medium-v0_seed1.d3",
+    "2": "checkpoints/iql_replications/iql_seed2/iql_mujoco_hopper_medium-v0_seed2.d3",
+    "3": "checkpoints/iql_replications/iql_seed3/iql_mujoco_hopper_medium-v0_seed3.d3",
+    "4": "checkpoints/iql_replications/iql_seed4/iql_mujoco_hopper_medium-v0_seed4.d3"
+  },
+  "sigma_levels": [0.0, 0.01, 0.025, 0.05, 0.1, 0.2, 0.3],
+  "primary_horizon": 10,
+  "sensitivity_horizons": [1, 5, 20],
+  "primary_outcome": "J_clean - J_shifted",
+  "reference_fraction": 0.9,
+  "protocol": "experiments/reliability/P1_DECISION_CONSEQUENCE_PROTOCOL.md",
+  "collector": "src/reliability/p1_consequence_full.py",
+  "engineering_gate_state_count": 20,
+  "status": "pre_collection",
+  "note": "The current Option-B stage intentionally uses the five existing verified IQL checkpoints; no retraining is performed."
+}
