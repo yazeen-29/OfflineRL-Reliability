@@ -1,0 +1,15 @@
+\begin{table}
+\caption{Primary H=10 held-out consequence prediction. No-signal baseline MAE=0.0591, RMSE=0.0974. Negative $\Delta$MAE indicates lower error than baseline. Inference uses policy seed as the independent unit.}
+\label{tab:p1_primary_prediction}
+\begin{tabular}{lllllllr}
+\toprule
+Predictor & MAE & RMSE & $\Delta$MAE & CI low & CI high & $p$ & 5-seed improvements \\
+\midrule
+Action & 0.0292 & 0.0707 & -0.0299 & -0.0349 & -0.0249 & 0.03125 & 5 \\
+Action + Support & 0.0294 & 0.0707 & -0.0296 & -0.0346 & -0.0246 & 0.03125 & 5 \\
+Action + Critic & 0.0303 & 0.0710 & -0.0287 & -0.0346 & -0.0228 & 0.03125 & 5 \\
+Action + Support + Critic & 0.0308 & 0.0712 & -0.0283 & -0.0348 & -0.0219 & 0.03125 & 5 \\
+Action + Support + Interaction & 0.0287 & 0.0708 & -0.0303 & -0.0352 & -0.0255 & 0.03125 & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
