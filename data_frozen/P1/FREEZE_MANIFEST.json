@@ -1,0 +1,50 @@
+{
+  "experiment": "P1_decision_consequence_full",
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "states_per_seed": 100,
+  "total_records": 14000,
+  "sigma_levels": [
+    0.0,
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "horizons": [
+    1,
+    5,
+    10,
+    20
+  ],
+  "primary_horizon": 10,
+  "files": {
+    "seed0.json": {
+      "sha256": "19ec658247fc518f6b105632fe3ec90e166951403e484176059c9800e439c17f",
+      "size_bytes": 4660467
+    },
+    "seed1.json": {
+      "sha256": "26b89348d775edb5e9ad80e91f95fe92b8d0a1c44813b148a157af862ccb2922",
+      "size_bytes": 4713234
+    },
+    "seed2.json": {
+      "sha256": "31c74670b1d0371652b60713df27ef8cc95c5ea2e355ee4e34c8dad97f7a891c",
+      "size_bytes": 4713101
+    },
+    "seed3.json": {
+      "sha256": "48dff44b761bf0631c47515cf12d211b6fdb79b4dff7758881d8cf73b6951399",
+      "size_bytes": 4716243
+    },
+    "seed4.json": {
+      "sha256": "1ea7ffad34e11cd01df3fa1c57b9446b41a3c7d41f4c9e95c940674813ee50d1",
+      "size_bytes": 4730342
+    }
+  }
+}
