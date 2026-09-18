@@ -597,9 +597,15 @@ def make_risk_coverage(
             n = len(fold)
 
             for coverage in coverage_grid:
+                coverage_percent = int(round(coverage * 100))
+
+                # Integer percentage arithmetic avoids floating-point
+                # ceil() errors such as 0.3 * 700 -> 211.
                 keep_n = max(
                     1,
-                    int(np.ceil(coverage * n)),
+                    int(np.ceil(
+                        coverage_percent * n / 100
+                    )),
                 )
 
                 retained = fold.iloc[:keep_n]
