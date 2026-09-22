@@ -1,0 +1,53 @@
+{
+  "algorithm": "cql",
+  "experiment": "P5_CQL_Hopper_RERUN",
+  "n_steps": 100000,
+  "seeds": {
+    "0": {
+      "backup": "backup/P5_CQL/P5_CQL_seed0_backup.tar.gz",
+      "checkpoint": "checkpoints/cql_seed0/cql_mujoco_hopper_medium-v0_seed0.d3",
+      "checkpoint_bytes": 3115372,
+      "completed_at": 1790084542.6042976,
+      "github_backup": "not_pushed",
+      "sha256": "64e0d82bcf4734239919d2d0db89e7909ffea7128d8ff8d68c84c17a631271db",
+      "status": "completed"
+    },
+    "1": {
+      "backup": "backup/P5_CQL/P5_CQL_seed1_backup.tar.gz",
+      "checkpoint": "checkpoints/cql_seed1/cql_mujoco_hopper_medium-v0_seed1.d3",
+      "checkpoint_bytes": 3115372,
+      "completed_at": 1790084553.4895122,
+      "github_backup": "not_pushed",
+      "sha256": "1edaee00e4635dd319f3d7da326531bf2dea51025c608674c117ce4561168040",
+      "status": "completed"
+    },
+    "2": {
+      "backup": "backup/P5_CQL/P5_CQL_seed2_backup.tar.gz",
+      "checkpoint": "checkpoints/cql_seed2/cql_mujoco_hopper_medium-v0_seed2.d3",
+      "checkpoint_bytes": 3115372,
+      "completed_at": 1790087040.2792766,
+      "github_backup": "not_pushed",
+      "sha256": "8039877903fa68e7b18f06c4c20390a372b314d617370f09183103a2767104b7",
+      "status": "completed"
+    },
+    "3": {
+      "backup": "backup/P5_CQL/P5_CQL_seed3_backup.tar.gz",
+      "checkpoint": "checkpoints/cql_seed3/cql_mujoco_hopper_medium-v0_seed3.d3",
+      "checkpoint_bytes": 3115372,
+      "completed_at": 1790087009.396328,
+      "github_backup": "not_pushed",
+      "sha256": "9c57b4e382a9cc7a2c87ee21ddae7ee075028f74a2208dd7ba559343e1462d59",
+      "status": "completed"
+    },
+    "4": {
+      "backup": "backup/P5_CQL/P5_CQL_seed4_backup.tar.gz",
+      "checkpoint": "checkpoints/cql_seed4/cql_mujoco_hopper_medium-v0_seed4.d3",
+      "checkpoint_bytes": 3115372,
+      "completed_at": 1790089306.1431925,
+      "github_backup": "not_pushed",
+      "sha256": "200e272b4c8506233c093e0a6fe15ec9793ad2925ab8a598660161672f743f10",
+      "status": "completed"
+    }
+  },
+  "task": "mujoco/hopper/medium-v0"
+}

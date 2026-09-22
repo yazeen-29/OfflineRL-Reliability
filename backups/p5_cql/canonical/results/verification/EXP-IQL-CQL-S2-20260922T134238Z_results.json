@@ -1,0 +1,19 @@
+{
+  "experiment_id": "EXP-IQL-CQL-S2-20260922T134238Z",
+  "algorithm": "cql",
+  "task": "mujoco/hopper/medium-v0",
+  "seed": 2,
+  "training_steps": 100000,
+  "device": "cuda:0",
+  "dataset_episodes": 1327,
+  "checkpoint_path": "/kaggle/working/OfflineRL-Reliability/checkpoints/cql_seed2/cql_mujoco_hopper_medium-v0_seed2.d3",
+  "checkpoint_size_bytes": 3115372,
+  "in_memory_return": 6.510054585863986,
+  "reloaded_return": 6.510054585863986,
+  "absolute_difference": 0.0,
+  "tolerance": 1e-10,
+  "verification": "CONSISTENT",
+  "git_commit": "6db274e353c57ce8ee33fb41426c932dc7fda9b4",
+  "git_status": "DIRTY",
+  "timestamp_utc": "2026-09-22T14:23:56.566296+00:00"
+}

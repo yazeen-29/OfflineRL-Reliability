@@ -1,0 +1,13 @@
+{
+  "algorithm": "cql",
+  "checkpoint": "checkpoints/cql_seed2/cql_mujoco_hopper_medium-v0_seed2.d3",
+  "checkpoint_bytes": 3115372,
+  "completed_at": 1790087039.8627455,
+  "experiment": "P5_CQL_Hopper_RERUN",
+  "n_steps": 100000,
+  "seed": 2,
+  "sha256": "8039877903fa68e7b18f06c4c20390a372b314d617370f09183103a2767104b7",
+  "status": "COMPLETED",
+  "task": "mujoco/hopper/medium-v0",
+  "training_log": "logs/replications/cql/seed2.parallel.log"
+}

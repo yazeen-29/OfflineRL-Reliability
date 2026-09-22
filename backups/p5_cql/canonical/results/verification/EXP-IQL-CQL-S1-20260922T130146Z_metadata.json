@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-09-22T13:01:46.986635+00:00",
+  "python_version": "3.12.13",
+  "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "pytorch_version": "2.10.0+cu128",
+  "numpy_version": "2.0.2",
+  "d3rlpy_version": "2.8.1",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "gpu_count": 1,
+  "gpu_name": "Tesla T4",
+  "experiment_id": "EXP-IQL-CQL-S1-20260922T130146Z",
+  "algorithm": "cql",
+  "task": "mujoco/hopper/medium-v0",
+  "seed": 1,
+  "training_steps": 100000,
+  "device": "cuda:0",
+  "git_commit": "6db274e353c57ce8ee33fb41426c932dc7fda9b4",
+  "git_status": "CLEAN",
+  "training_provenance": {
+    "training_spec_sha256": "852ff0fa14578bb6d60b67f44d31806c31b2e5c77b2fbb9358e80254087402ee",
+    "src/training/train_and_verify.py_sha256": "86883cb2d0b6300453ce944561370cab78f56d2eeafcb20cd6699ee8ad35fbe9",
+    "src/training/run_replications.py_sha256": "de5275d4c2fa8cd08e4cc12a84059893da55e249b95a2511875e911abeebe728",
+    "src/utils/policy_io.py_sha256": "bfc13c508ea3fb321047462fe8daf38948ac741fd51a5fe04645f38c2b0dba13"
+  },
+  "dataset_episodes": 1327,
+  "environment": "<TimeLimit<HopperEnv<Hopper-v5>>>",
+  "checkpoint_path": "/kaggle/working/OfflineRL-Reliability/checkpoints/cql_seed1/cql_mujoco_hopper_medium-v0_seed1.d3",
+  "checkpoint_size_bytes": 3115372,
+  "checkpoint_format": "d3rlpy_full_model"
+}

@@ -1,0 +1,7 @@
+{
+  "file": "src/reliability/p5_cql_consequence_full.py",
+  "size_bytes": 9271,
+  "sha256": "ccd705766f3aca9a6220e9d292399eea542763ac35404a0da24581212ff5da7b",
+  "source": "derived mechanically from frozen P1 collector",
+  "protocol": "experiments/reliability/P5_CQL_GENERALIZATION_PROTOCOL.md"
+}

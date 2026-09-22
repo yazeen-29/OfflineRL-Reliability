@@ -1,0 +1,32 @@
+{
+  "archive": "backup/P5_CQL/P5_CQL_Hopper_COMPLETE_BACKUP.tar.gz",
+  "archive_bytes": 43971093,
+  "created_at": 1790090941.5700495,
+  "files": {
+    "seed0_checkpoint": {
+      "bytes": 3115372,
+      "path": "checkpoints/cql_seed0/cql_mujoco_hopper_medium-v0_seed0.d3",
+      "sha256": "64e0d82bcf4734239919d2d0db89e7909ffea7128d8ff8d68c84c17a631271db"
+    },
+    "seed1_checkpoint": {
+      "bytes": 3115372,
+      "path": "checkpoints/cql_seed1/cql_mujoco_hopper_medium-v0_seed1.d3",
+      "sha256": "1edaee00e4635dd319f3d7da326531bf2dea51025c608674c117ce4561168040"
+    },
+    "seed2_checkpoint": {
+      "bytes": 3115372,
+      "path": "checkpoints/cql_seed2/cql_mujoco_hopper_medium-v0_seed2.d3",
+      "sha256": "8039877903fa68e7b18f06c4c20390a372b314d617370f09183103a2767104b7"
+    },
+    "seed3_checkpoint": {
+      "bytes": 3115372,
+      "path": "checkpoints/cql_seed3/cql_mujoco_hopper_medium-v0_seed3.d3",
+      "sha256": "9c57b4e382a9cc7a2c87ee21ddae7ee075028f74a2208dd7ba559343e1462d59"
+    },
+    "seed4_checkpoint": {
+      "bytes": 3115372,
+      "path": "checkpoints/cql_seed4/cql_mujoco_hopper_medium-v0_seed4.d3",
+      "sha256": "200e272b4c8506233c093e0a6fe15ec9793ad2925ab8a598660161672f743f10"
+    }
+  }
+}

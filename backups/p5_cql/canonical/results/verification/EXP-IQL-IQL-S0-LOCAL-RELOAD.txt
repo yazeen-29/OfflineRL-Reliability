@@ -1,0 +1,21 @@
+Experiment: EXP-IQL-IQL-S0-20260821T154059Z
+
+Checkpoint:
+checkpoints/iql_100k/iql_mujoco_hopper_medium-v0_seed0.d3
+
+Kaggle return:
+5.541286887524365
+
+Arch local return:
+5.541287391475207
+
+Absolute difference:
+5.039508428339445e-07
+
+Local rollout:
+Hopper medium-v0
+seed=0
+episode ended at step=33
+
+Status:
+DOWNLOADED CHECKPOINT VERIFIED LOCALLY
