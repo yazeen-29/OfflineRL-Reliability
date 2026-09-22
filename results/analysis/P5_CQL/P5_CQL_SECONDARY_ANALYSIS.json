@@ -1,0 +1,311 @@
+{
+  "experiment": "P5_CQL_Hopper_final_consequence",
+  "git_commit": "2a811a6571e36cf1349c9c97981482cdc6232900",
+  "secondary": [
+    {
+      "seed": 0,
+      "support_to_action": {
+        "slope": 0.002139983206629689,
+        "intercept": 0.018449361651423902,
+        "rvalue": 0.23466331158174975,
+        "r_squared": 0.055066869802513366,
+        "p_value": 0.018771103443206753
+      },
+      "support_to_consequence": {
+        "slope": -0.0009635703019820851,
+        "intercept": 0.005023020713850166,
+        "rvalue": -0.3711256883902968,
+        "r_squared": 0.1377342765831717,
+        "p_value": 0.0001439448015968369
+      },
+      "dose_response": {
+        "spearman_rho": 1.0,
+        "spearman_p": 0.0,
+        "kendall_tau": 0.9999999999999999,
+        "kendall_p": 0.002777777777777778,
+        "levels": [
+          {
+            "seed": 0,
+            "sigma": 0.01,
+            "action_disagreement_mean": 0.001874077072531742,
+            "absolute_consequence_mean": 0.0003059414528447385
+          },
+          {
+            "seed": 0,
+            "sigma": 0.025,
+            "action_disagreement_mean": 0.004704024669040103,
+            "absolute_consequence_mean": 0.0007774829029719555
+          },
+          {
+            "seed": 0,
+            "sigma": 0.05,
+            "action_disagreement_mean": 0.009551932813089664,
+            "absolute_consequence_mean": 0.0015838269357151657
+          },
+          {
+            "seed": 0,
+            "sigma": 0.1,
+            "action_disagreement_mean": 0.01892234970526566,
+            "absolute_consequence_mean": 0.0031208090672289425
+          },
+          {
+            "seed": 0,
+            "sigma": 0.2,
+            "action_disagreement_mean": 0.03708633305410913,
+            "absolute_consequence_mean": 0.006367049269061858
+          },
+          {
+            "seed": 0,
+            "sigma": 0.3,
+            "action_disagreement_mean": 0.05553260119140939,
+            "absolute_consequence_mean": 0.010339613992584089
+          }
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "support_to_action": {
+        "slope": -0.018738821907334918,
+        "intercept": 0.07920851063050484,
+        "rvalue": -0.41218798331038325,
+        "r_squared": 0.16989893358548078,
+        "p_value": 2.0342617943819693e-05
+      },
+      "support_to_consequence": {
+        "slope": -0.07929886004191561,
+        "intercept": 0.197480972832287,
+        "rvalue": -0.4331149252412706,
+        "r_squared": 0.18758853846675141,
+        "p_value": 6.7686637001991435e-06
+      },
+      "dose_response": {
+        "spearman_rho": 1.0,
+        "spearman_p": 0.0,
+        "kendall_tau": 0.9999999999999999,
+        "kendall_p": 0.002777777777777778,
+        "levels": [
+          {
+            "seed": 1,
+            "sigma": 0.01,
+            "action_disagreement_mean": 0.004596900641410421,
+            "absolute_consequence_mean": 0.004206457173667914
+          },
+          {
+            "seed": 1,
+            "sigma": 0.025,
+            "action_disagreement_mean": 0.011452604211253275,
+            "absolute_consequence_mean": 0.020442330720980107
+          },
+          {
+            "seed": 1,
+            "sigma": 0.05,
+            "action_disagreement_mean": 0.022969638531515502,
+            "absolute_consequence_mean": 0.04744204993694727
+          },
+          {
+            "seed": 1,
+            "sigma": 0.1,
+            "action_disagreement_mean": 0.04675154141530146,
+            "absolute_consequence_mean": 0.09561439701770333
+          },
+          {
+            "seed": 1,
+            "sigma": 0.2,
+            "action_disagreement_mean": 0.10300555193714227,
+            "absolute_consequence_mean": 0.20067228853185373
+          },
+          {
+            "seed": 1,
+            "sigma": 0.3,
+            "action_disagreement_mean": 0.16975184733237156,
+            "absolute_consequence_mean": 0.32256054689648184
+          }
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "support_to_action": {
+        "slope": 0.03426420937506433,
+        "intercept": 0.06050795614919628,
+        "rvalue": 0.4841989745600779,
+        "r_squared": 0.23444864696503095,
+        "p_value": 3.324623768587474e-07
+      },
+      "support_to_consequence": {
+        "slope": 0.005159787510707238,
+        "intercept": 0.014612610166989778,
+        "rvalue": 0.12536002618619213,
+        "r_squared": 0.015715136165402776,
+        "p_value": 0.21396053869640216
+      },
+      "dose_response": {
+        "spearman_rho": 1.0,
+        "spearman_p": 0.0,
+        "kendall_tau": 0.9999999999999999,
+        "kendall_p": 0.002777777777777778,
+        "levels": [
+          {
+            "seed": 2,
+            "sigma": 0.01,
+            "action_disagreement_mean": 0.011499468495202747,
+            "absolute_consequence_mean": 0.0014030841166570033
+          },
+          {
+            "seed": 2,
+            "sigma": 0.025,
+            "action_disagreement_mean": 0.02852560695942226,
+            "absolute_consequence_mean": 0.00348082841429144
+          },
+          {
+            "seed": 2,
+            "sigma": 0.05,
+            "action_disagreement_mean": 0.055984172697371985,
+            "absolute_consequence_mean": 0.007042810482164554
+          },
+          {
+            "seed": 2,
+            "sigma": 0.1,
+            "action_disagreement_mean": 0.10602660060911251,
+            "absolute_consequence_mean": 0.014076983427386584
+          },
+          {
+            "seed": 2,
+            "sigma": 0.2,
+            "action_disagreement_mean": 0.1863210624003254,
+            "absolute_consequence_mean": 0.042006784545608376
+          },
+          {
+            "seed": 2,
+            "sigma": 0.3,
+            "action_disagreement_mean": 0.24827774929814792,
+            "absolute_consequence_mean": 0.06086414752172217
+          }
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "support_to_action": {
+        "slope": 0.03757456444144987,
+        "intercept": 0.07296308242256973,
+        "rvalue": 0.3553149449523641,
+        "r_squared": 0.12624871010650152,
+        "p_value": 0.0002860676703912176
+      },
+      "support_to_consequence": {
+        "slope": 0.33316567459723606,
+        "intercept": 0.006987472420742991,
+        "rvalue": 0.45807081596142224,
+        "r_squared": 0.20982887243556317,
+        "p_value": 1.6502754883396752e-06
+      },
+      "dose_response": {
+        "spearman_rho": 1.0,
+        "spearman_p": 0.0,
+        "kendall_tau": 0.9999999999999999,
+        "kendall_p": 0.002777777777777778,
+        "levels": [
+          {
+            "seed": 3,
+            "sigma": 0.01,
+            "action_disagreement_mean": 0.010469334552881711,
+            "absolute_consequence_mean": 0.03734401809720095
+          },
+          {
+            "seed": 3,
+            "sigma": 0.025,
+            "action_disagreement_mean": 0.02582368650856037,
+            "absolute_consequence_mean": 0.059431723418998966
+          },
+          {
+            "seed": 3,
+            "sigma": 0.05,
+            "action_disagreement_mean": 0.05157233431249019,
+            "absolute_consequence_mean": 0.18704042763593048
+          },
+          {
+            "seed": 3,
+            "sigma": 0.1,
+            "action_disagreement_mean": 0.09939986166053574,
+            "absolute_consequence_mean": 0.319355315913595
+          },
+          {
+            "seed": 3,
+            "sigma": 0.2,
+            "action_disagreement_mean": 0.1836112330789776,
+            "absolute_consequence_mean": 0.47422616948451735
+          },
+          {
+            "seed": 3,
+            "sigma": 0.3,
+            "action_disagreement_mean": 0.2464449479863017,
+            "absolute_consequence_mean": 0.5564959352838382
+          }
+        ]
+      }
+    },
+    {
+      "seed": 4,
+      "support_to_action": {
+        "slope": 0.005714429450830893,
+        "intercept": 0.03911941675082189,
+        "rvalue": 0.09454222309053269,
+        "r_squared": 0.008938231946900053,
+        "p_value": 0.3494617725409941
+      },
+      "support_to_consequence": {
+        "slope": -0.02013962976520789,
+        "intercept": 0.03992785191680823,
+        "rvalue": -0.3567291202840422,
+        "r_squared": 0.12725566525862664,
+        "p_value": 0.00026941012437806594
+      },
+      "dose_response": {
+        "spearman_rho": 1.0,
+        "spearman_p": 0.0,
+        "kendall_tau": 0.9999999999999999,
+        "kendall_p": 0.002777777777777778,
+        "levels": [
+          {
+            "seed": 4,
+            "sigma": 0.01,
+            "action_disagreement_mean": 0.00388294315952593,
+            "absolute_consequence_mean": 0.002407569115839995
+          },
+          {
+            "seed": 4,
+            "sigma": 0.025,
+            "action_disagreement_mean": 0.009775655601549011,
+            "absolute_consequence_mean": 0.005997013779599613
+          },
+          {
+            "seed": 4,
+            "sigma": 0.05,
+            "action_disagreement_mean": 0.01961779189389215,
+            "absolute_consequence_mean": 0.011901616162081097
+          },
+          {
+            "seed": 4,
+            "sigma": 0.1,
+            "action_disagreement_mean": 0.03893088768868301,
+            "absolute_consequence_mean": 0.024326383977726577
+          },
+          {
+            "seed": 4,
+            "sigma": 0.2,
+            "action_disagreement_mean": 0.07407492605827987,
+            "absolute_consequence_mean": 0.04713740330755295
+          },
+          {
+            "seed": 4,
+            "sigma": 0.3,
+            "action_disagreement_mean": 0.10829038021723403,
+            "absolute_consequence_mean": 0.0778174034573418
+          }
+        ]
+      }
+    }
+  ]
+}
