@@ -54,3 +54,6 @@ paper/figures/cross_environment/
 Thumbs.db
 *.swp
 *.swo
+
+# Local experiment backups
+backups/p6_cql/

@@ -1,0 +1,5 @@
+]633;E;for s in 0 1 2 3 4\x3b do     file=$(find extracted \\\x0a-type f \\\x0a-name "cql_mujoco_walker2d_medium-v0_seed${s}.d3" \\\x0a-print -quit)\x3b      sha256sum "$file"\x3b done > P6_CQL_Walker2d_5SEED_CHECKPOINT_SHA256.txt;675e5c89-b633-4d4f-ab1e-3403037598e3]633;Cb9a430b91d12301e12b837d64950be702ff0b0d3eba3457247295f38da5e7802  extracted/batch01/seed0/cql_mujoco_walker2d_medium-v0_seed0.d3
+a566a22a5e3cc7d984ce53ee7d897b90f54cfb605b25ea0b2569ef2edd2b170d  extracted/batch01/seed1/cql_mujoco_walker2d_medium-v0_seed1.d3
+a9c625c28267a358459800fa1f0049184f19b043a9ca9ba73f35d711fd16f75b  extracted/batch02/seed2/cql_mujoco_walker2d_medium-v0_seed2.d3
+d0a8a2e052eaf57ccc3aa0df5dacd4687389d32a018fd8f9aa4c9c3bb1f109b8  extracted/batch02/seed3/cql_mujoco_walker2d_medium-v0_seed3.d3
+ebe857f0ed285acb6b0d2a262ccb0390f212b4e3ae69cd6dab8c925660a82a88  extracted/seed04/seed4/cql_mujoco_walker2d_medium-v0_seed4.d3
