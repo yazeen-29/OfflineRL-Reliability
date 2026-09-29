@@ -60,3 +60,6 @@ backups/p6_cql/
 
 # Local P6 Walker2d experiment backups
 backups/p6_cql_walker2d/
+
+# Local IQL Walker2d experiment backups
+backups/iql_walker2d/
