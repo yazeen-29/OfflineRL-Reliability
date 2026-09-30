@@ -70,3 +70,6 @@ backups/cql_halfcheetah/
 # Local P7 CQL HalfCheetah engineering and final logs
 results/reliability/P7_CQL_HalfCheetah/engineering_logs/
 results/reliability/P7_CQL_HalfCheetah/final_logs/
+results/reliability/IQL_HalfCheetah/engineering_gate/
+results/reliability/IQL_HalfCheetah/engineering_logs/
+results/reliability/IQL_HalfCheetah/final_logs/
