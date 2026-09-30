@@ -66,3 +66,7 @@ backups/iql_walker2d/
 
 backups/cql_halfcheetah/
 
+
+# Local P7 CQL HalfCheetah engineering and final logs
+results/reliability/P7_CQL_HalfCheetah/engineering_logs/
+results/reliability/P7_CQL_HalfCheetah/final_logs/
