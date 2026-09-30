@@ -1,0 +1,232 @@
+{
+  "experiment": "P9 cross-cell reliability estimator replication",
+  "repository_commit": "d36e04d5c5e8ebbb7238f741dfa4942c76f7b3c6",
+  "repository_status": "?? results/analysis/P9/",
+  "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+  "platform": "Linux-7.2.7-arch1-1-x86_64-with-glibc2.44",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "scikit_learn": "1.7.2",
+  "horizon": 10,
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "coverage_percent": [
+    10,
+    20,
+    30,
+    50,
+    70,
+    90,
+    100
+  ],
+  "n_deciles": 10,
+  "cells": {
+    "IQL_Hopper": "data_frozen/P1",
+    "IQL_HalfCheetah": "results/reliability/IQL_HalfCheetah/raw",
+    "IQL_Walker2d": "results/reliability/IQL_Walker2d/raw",
+    "CQL_Hopper": "results/reliability/P5_CQL/raw",
+    "CQL_HalfCheetah": "results/reliability/P7_CQL_HalfCheetah/raw",
+    "CQL_Walker2d": "results/reliability/P6_CQL_Walker2d/raw"
+  },
+  "primary_features": [
+    "action_disagreement",
+    "support_distance",
+    "twin_critic_disagreement"
+  ],
+  "sensitivity_features": [
+    "action_disagreement"
+  ],
+  "estimator": {
+    "preprocessing": "StandardScaler",
+    "model": "Ridge",
+    "alpha": 1.0,
+    "intercept": true,
+    "stochasticity": "none"
+  },
+  "reliability_score": "R(x) = 1 - F_train(predicted_C10)",
+  "cross_policy_evaluation": "leave-one-policy-seed-out",
+  "p2_inheritance": {
+    "base_protocol_sha256": "08b53f093617b72b69f309ecd68c21dc64a1cc8697a1738f1173690ca45ffd41",
+    "amendment_001_sha256": "07ef4943c7f10a6d69bf77f97e6d92499e911892aca35eaf454d90fa7b0afe0e"
+  },
+  "p9_protocol_sha256": "1b4700212050b3ad51dfc72ec5931f1d332e38cc533bbb4823dced12090c5b78",
+  "source_hashes": {
+    "IQL_Hopper": {
+      "0": {
+        "path": "data_frozen/P1/seed0.json",
+        "sha256": "19ec658247fc518f6b105632fe3ec90e166951403e484176059c9800e439c17f",
+        "bytes": 4660467
+      },
+      "1": {
+        "path": "data_frozen/P1/seed1.json",
+        "sha256": "26b89348d775edb5e9ad80e91f95fe92b8d0a1c44813b148a157af862ccb2922",
+        "bytes": 4713234
+      },
+      "2": {
+        "path": "data_frozen/P1/seed2.json",
+        "sha256": "31c74670b1d0371652b60713df27ef8cc95c5ea2e355ee4e34c8dad97f7a891c",
+        "bytes": 4713101
+      },
+      "3": {
+        "path": "data_frozen/P1/seed3.json",
+        "sha256": "48dff44b761bf0631c47515cf12d211b6fdb79b4dff7758881d8cf73b6951399",
+        "bytes": 4716243
+      },
+      "4": {
+        "path": "data_frozen/P1/seed4.json",
+        "sha256": "1ea7ffad34e11cd01df3fa1c57b9446b41a3c7d41f4c9e95c940674813ee50d1",
+        "bytes": 4730342
+      }
+    },
+    "IQL_HalfCheetah": {
+      "0": {
+        "path": "results/reliability/IQL_HalfCheetah/raw/seed0.json",
+        "sha256": "3be5d81be545360d0cb5e7e36d3c0e24b8315b4bdcf609ef05f5060837589fb7",
+        "bytes": 5660289
+      },
+      "1": {
+        "path": "results/reliability/IQL_HalfCheetah/raw/seed1.json",
+        "sha256": "d6810ad5b0c65df7d0d2c53e4b47e9945d7fa893a26949c4535be2a2355e5a85",
+        "bytes": 5704205
+      },
+      "2": {
+        "path": "results/reliability/IQL_HalfCheetah/raw/seed2.json",
+        "sha256": "3b5f202ddf99aca6a4ae3d7c0a0822ac143c03b71540bc83010d4fd577af93bb",
+        "bytes": 5709362
+      },
+      "3": {
+        "path": "results/reliability/IQL_HalfCheetah/raw/seed3.json",
+        "sha256": "dfa9f6e1a036bd8ac3f139adeb51753ea38860a36f6931cb2af0ff9f66bf361e",
+        "bytes": 5698176
+      },
+      "4": {
+        "path": "results/reliability/IQL_HalfCheetah/raw/seed4.json",
+        "sha256": "f3dab5a37600f76a8bc40fcee3fd64373d44471f4e619d65bcb05ef10c542d72",
+        "bytes": 5710622
+      }
+    },
+    "IQL_Walker2d": {
+      "0": {
+        "path": "results/reliability/IQL_Walker2d/raw/seed0.json",
+        "sha256": "33b9562bb5d87e3309e9ba81d43b5ce93046dcf25fa6d5ba452a35f1220cd711",
+        "bytes": 5658200
+      },
+      "1": {
+        "path": "results/reliability/IQL_Walker2d/raw/seed1.json",
+        "sha256": "3c2e69090ff8291a157f5920f925419ab1c970c349648de5c3d66520cefcb89f",
+        "bytes": 5654673
+      },
+      "2": {
+        "path": "results/reliability/IQL_Walker2d/raw/seed2.json",
+        "sha256": "1816bb7ca764876f18a912e00b7596a46adb1a024202d7b8a7d862fba8842290",
+        "bytes": 5650564
+      },
+      "3": {
+        "path": "results/reliability/IQL_Walker2d/raw/seed3.json",
+        "sha256": "278f8edc984bbc45b36de6e17b347e00beb6b44769de51365e5efe88d5d88a78",
+        "bytes": 5655063
+      },
+      "4": {
+        "path": "results/reliability/IQL_Walker2d/raw/seed4.json",
+        "sha256": "635e14efe724a1531d0b0f3492efdc6812680397775b02a2ad2265a6aed81a32",
+        "bytes": 5659726
+      }
+    },
+    "CQL_Hopper": {
+      "0": {
+        "path": "results/reliability/P5_CQL/raw/seed0.json",
+        "sha256": "7e439ffde421fa67850785d10549ff415cfc7ff6fce59f317e792d2eca4e89e9",
+        "bytes": 4661382
+      },
+      "1": {
+        "path": "results/reliability/P5_CQL/raw/seed1.json",
+        "sha256": "65efb080683486e3a682c2f8d7c7c2f3317d031d99c614b65ef174953a48c772",
+        "bytes": 4661425
+      },
+      "2": {
+        "path": "results/reliability/P5_CQL/raw/seed2.json",
+        "sha256": "1da32b4ca2181c989cb1280537d6645c6572b08408552d4f790cd77c4263775d",
+        "bytes": 4649999
+      },
+      "3": {
+        "path": "results/reliability/P5_CQL/raw/seed3.json",
+        "sha256": "8122d5f8906b9b382e3fd86ebe76a915f0c7c1c4385743b0098e0e27ef5ee396",
+        "bytes": 4653542
+      },
+      "4": {
+        "path": "results/reliability/P5_CQL/raw/seed4.json",
+        "sha256": "a1ad0f86a9f1dfd009778bd62366cdea270e47d8cc5d604bebe18dde26287b4e",
+        "bytes": 4653400
+      }
+    },
+    "CQL_HalfCheetah": {
+      "0": {
+        "path": "results/reliability/P7_CQL_HalfCheetah/raw/seed0.json",
+        "sha256": "5c7e5ee3d5374646ae82027fe56ef1a6c710ecc812491779234526de439d9b03",
+        "bytes": 5646030
+      },
+      "1": {
+        "path": "results/reliability/P7_CQL_HalfCheetah/raw/seed1.json",
+        "sha256": "332fcaa1ccfd3e1abf43763ff7cb596a6689838c6ad79d0c5ac25afb0a35f50b",
+        "bytes": 5651922
+      },
+      "2": {
+        "path": "results/reliability/P7_CQL_HalfCheetah/raw/seed2.json",
+        "sha256": "295562747e71ae304c5191ad13f98ad803270e8c1755529d4ed571db17c1b919",
+        "bytes": 5668046
+      },
+      "3": {
+        "path": "results/reliability/P7_CQL_HalfCheetah/raw/seed3.json",
+        "sha256": "ef78d5e4f5ddd0c1e8505d901e9389c2a621bc4ba4cc52f75d570f1465267d05",
+        "bytes": 5667510
+      },
+      "4": {
+        "path": "results/reliability/P7_CQL_HalfCheetah/raw/seed4.json",
+        "sha256": "03b6b70b88914acc9f7815e2e439eebab772a1887fe51f75f4ec941e5520fce4",
+        "bytes": 5646797
+      }
+    },
+    "CQL_Walker2d": {
+      "0": {
+        "path": "results/reliability/P6_CQL_Walker2d/raw/seed0.json",
+        "sha256": "01d1f27d9f24028d28bae9b822226aa3b8e5450c1118d696a65f675bcbe16d03",
+        "bytes": 5596739
+      },
+      "1": {
+        "path": "results/reliability/P6_CQL_Walker2d/raw/seed1.json",
+        "sha256": "91130ccc47f7ceb661698d1acf2e1365588cd929491ee9a6c13f40d4700cc791",
+        "bytes": 5599097
+      },
+      "2": {
+        "path": "results/reliability/P6_CQL_Walker2d/raw/seed2.json",
+        "sha256": "73138f2145f5d245086aa1d34b4bee067733db2d1c7b003206a38fbf2ad67b48",
+        "bytes": 5597389
+      },
+      "3": {
+        "path": "results/reliability/P6_CQL_Walker2d/raw/seed3.json",
+        "sha256": "4083e1b5f4b89379a8944d15447749cffd3fb15a6757cb4f2478d64c23478ceb",
+        "bytes": 5585882
+      },
+      "4": {
+        "path": "results/reliability/P6_CQL_Walker2d/raw/seed4.json",
+        "sha256": "ba5437317b22abe08d2b3f68612ac203a59ea7182215eaa4e2568ab1e2f85c17",
+        "bytes": 5585407
+      }
+    }
+  },
+  "source_records": 42000,
+  "records_per_cell": {
+    "IQL_Hopper": 3500,
+    "IQL_HalfCheetah": 3500,
+    "IQL_Walker2d": 3500,
+    "CQL_Hopper": 3500,
+    "CQL_HalfCheetah": 3500,
+    "CQL_Walker2d": 3500
+  },
+  "heldout_prediction_records": 42000
+}
